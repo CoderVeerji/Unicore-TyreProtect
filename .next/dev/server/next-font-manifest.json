@@ -3,7 +3,22 @@
     "[project]/app/_not-found/page": [
       "static/media/1b99372b3eaef0c8-s.p.758e15a8.woff2"
     ],
+    "[project]/app/about/page": [
+      "static/media/1b99372b3eaef0c8-s.p.758e15a8.woff2"
+    ],
+    "[project]/app/contact/page": [
+      "static/media/1b99372b3eaef0c8-s.p.758e15a8.woff2"
+    ],
+    "[project]/app/dealers/page": [
+      "static/media/1b99372b3eaef0c8-s.p.758e15a8.woff2"
+    ],
+    "[project]/app/faq/page": [
+      "static/media/1b99372b3eaef0c8-s.p.758e15a8.woff2"
+    ],
     "[project]/app/page": [
+      "static/media/1b99372b3eaef0c8-s.p.758e15a8.woff2"
+    ],
+    "[project]/app/products/page": [
       "static/media/1b99372b3eaef0c8-s.p.758e15a8.woff2"
     ]
   },

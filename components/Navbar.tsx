@@ -26,10 +26,13 @@ export default function Navbar() {
         </Link>
         
         {/* DESKTOP LINKS */}
-        <div className="hidden md:flex gap-10 text-xs font-bold tracking-[0.2em] text-gray-300">
+        <div className="hidden lg:flex gap-8 lg:gap-10 text-[10px] lg:text-xs font-bold tracking-[0.2em] text-gray-300">
           <Link href="/" className="hover:text-[#39FF14] transition-colors cursor-none">HOME</Link>
-          <Link href="/about" className="hover:text-[#39FF14] transition-colors cursor-none">ABOUT US</Link>
-          <Link href="#contact" className="hover:text-[#39FF14] transition-colors cursor-none">CONTACT</Link>
+          <Link href="/about" className="hover:text-[#39FF14] transition-colors cursor-none">ABOUT</Link>
+          <Link href="/products" className="hover:text-[#39FF14] transition-colors cursor-none">PRODUCTS</Link>
+          <Link href="/contact" className="hover:text-[#39FF14] transition-colors cursor-none">CONTACT</Link>
+          <Link href="/faq" className="hover:text-[#39FF14] transition-colors cursor-none">FAQ</Link>
+          <Link href="/dealers" className="hover:text-[#39FF14] transition-colors cursor-none">DEALERS</Link>
         </div>
         
         {/* DESKTOP CTA */}
@@ -60,10 +63,13 @@ export default function Navbar() {
                transition={{ duration: 0.5, ease: "easeInOut" }}
                className="fixed inset-0 z-[90] bg-black/95 backdrop-blur-3xl flex flex-col items-center justify-center pointer-events-auto cursor-default"
             >
-               <div className="flex flex-col gap-10 text-center text-3xl font-black tracking-widest text-white">
+               <div className="flex flex-col gap-8 text-center text-3xl font-black tracking-widest text-white">
                   <Link href="/" onClick={() => setIsOpen(false)} className="hover:text-[#39FF14] transition-colors">HOME</Link>
-                  <Link href="/about" onClick={() => setIsOpen(false)} className="hover:text-[#39FF14] transition-colors">ABOUT US</Link>
-                  <Link href="#contact" onClick={() => setIsOpen(false)} className="hover:text-[#39FF14] transition-colors">CONTACT</Link>
+                  <Link href="/about" onClick={() => setIsOpen(false)} className="hover:text-[#39FF14] transition-colors">ABOUT</Link>
+                  <Link href="/products" onClick={() => setIsOpen(false)} className="hover:text-[#39FF14] transition-colors">PRODUCTS</Link>
+                  <Link href="/contact" onClick={() => setIsOpen(false)} className="hover:text-[#39FF14] transition-colors">CONTACT</Link>
+                  <Link href="/faq" onClick={() => setIsOpen(false)} className="hover:text-[#39FF14] transition-colors">FAQ</Link>
+                  <Link href="/dealers" onClick={() => setIsOpen(false)} className="hover:text-[#39FF14] transition-colors">DEALERS</Link>
                </div>
                
                <button 
