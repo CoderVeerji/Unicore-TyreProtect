@@ -4,6 +4,7 @@ import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import ScrollToTop from '@/components/ScrollToTop';
+import CustomCursor from '@/components/CustomCursor';
 
 const outfit = Outfit({ subsets: ['latin'], variable: '--font-outfit' });
 
@@ -19,7 +20,8 @@ export default function RootLayout({
 }) {
     return (
         <html lang="en">
-            <body className={`${outfit.variable} font-sans bg-black text-white antialiased`} suppressHydrationWarning>
+            <body className={`${outfit.variable} font-sans bg-black text-white antialiased cursor-none`} suppressHydrationWarning>
+                <CustomCursor />
                 <Navbar />
                 {children}
                 <Footer />

@@ -11,23 +11,17 @@ export default function Home() {
     const [selectedProduct, setSelectedProduct] = useState(0);
 
     return (
-        <main className="w-full bg-black min-h-screen">
-            {/* STICKY HERO (Stays in background while scrolling down) */}
-            <div className="sticky top-0 h-screen w-full z-0 pointer-events-auto">
-                <CarouselHero selected={selectedProduct} setSelected={setSelectedProduct} />
-            </div>
+        <main className="w-full bg-[#030303] min-h-screen selection:bg-[#39FF14]/30">
+            <CarouselHero selected={selectedProduct} setSelected={setSelectedProduct} />
             
-            {/* CONTENT THAT SLIDES OVER THE HERO */}
-            <div className="relative z-10 bg-[#050505] rounded-t-[3rem] md:rounded-t-[5rem] overflow-hidden border-t border-white/10 shadow-[0_-30px_100px_rgba(0,0,0,0.8)] pointer-events-auto">
-                <ProductDetailsScroller selected={selectedProduct} />
+            <ProductDetailsScroller selected={selectedProduct} />
 
-                <ProductVideo selected={selectedProduct} />
+            <ProductVideo selected={selectedProduct} />
 
-                <FeatureGrid />
-                
-                <div id="contact">
-                    <ContactForm />
-                </div>
+            <FeatureGrid />
+            
+            <div id="contact">
+                <ContactForm />
             </div>
         </main>
     );

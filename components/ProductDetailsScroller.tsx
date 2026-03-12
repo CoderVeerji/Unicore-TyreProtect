@@ -69,7 +69,7 @@ export default function ProductDetailsScroller({ selected }: { selected: number 
 
 
   return (
-    <div ref={ref} className="relative w-full h-[600vh] bg-transparent">
+    <div ref={ref} className="relative w-full h-[600vh] bg-[#050505]">
       <div className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden perspective-[1000px] px-6">
         
         {/* Dynamic Glowing Background */}
