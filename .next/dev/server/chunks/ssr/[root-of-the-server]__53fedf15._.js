@@ -405,9 +405,12 @@ function CustomCursor() {
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
         // Show cursor when mounted and mouse moves
         const showCursor = ()=>setIsVisible(true);
+        // Fallback: forcefully keep visible since random disappearing was reported
+        setIsVisible(true);
         const moveCursor = (e)=>{
             cursorX.set(e.clientX);
             cursorY.set(e.clientY);
+            setIsVisible(true);
             // Detect hover over clickable elements
             const target = e.target;
             if (target && target.closest('button, a, input, textarea, select, [role="button"], .cursor-pointer, .group')) {
@@ -418,10 +421,8 @@ function CustomCursor() {
         };
         window.addEventListener('mousemove', moveCursor);
         window.addEventListener('mouseenter', showCursor);
-        // Hide when leaving 
-        window.addEventListener('mouseout', (e)=>{
-            if (!e.relatedTarget) setIsVisible(false);
-        });
+        // DO NOT hide when leaving window to prevent bugs
+        // (Removed buggy mouseout listener that was hiding cursor incorrectly)
         return ()=>{
             window.removeEventListener('mousemove', moveCursor);
             window.removeEventListener('mouseenter', showCursor);
@@ -430,11 +431,15 @@ function CustomCursor() {
         cursorX,
         cursorY
     ]);
-    if (("TURBOPACK compile-time value", "undefined") !== 'undefined' && window.matchMedia('(pointer: coarse)').matches) //TURBOPACK unreachable
-    ;
+    if (typeof document !== 'undefined' && window.matchMedia('(pointer: coarse)').matches) {
+        return null;
+    }
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: "fixed inset-0 pointer-events-none z-[9999]",
-        children: isVisible && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Fragment"], {
+        className: "fixed inset-0 pointer-events-none z-[999999]",
+        style: {
+            display: isVisible ? 'block' : 'none'
+        },
+        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Fragment"], {
             children: [
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
                     className: "fixed top-0 left-0 rounded-full mix-blend-screen pointer-events-none",
@@ -451,7 +456,7 @@ function CustomCursor() {
                     }
                 }, void 0, false, {
                     fileName: "[project]/components/CustomCursor.tsx",
-                    lineNumber: 63,
+                    lineNumber: 64,
                     columnNumber: 14
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
@@ -477,19 +482,19 @@ function CustomCursor() {
                         }
                     }, void 0, false, {
                         fileName: "[project]/components/CustomCursor.tsx",
-                        lineNumber: 88,
+                        lineNumber: 89,
                         columnNumber: 17
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/components/CustomCursor.tsx",
-                    lineNumber: 79,
+                    lineNumber: 80,
                     columnNumber: 14
                 }, this)
             ]
         }, void 0, true)
     }, void 0, false, {
         fileName: "[project]/components/CustomCursor.tsx",
-        lineNumber: 59,
+        lineNumber: 61,
         columnNumber: 5
     }, this);
 }

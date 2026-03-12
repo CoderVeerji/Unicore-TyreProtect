@@ -24,9 +24,13 @@ export default function CustomCursor() {
     // Show cursor when mounted and mouse moves
     const showCursor = () => setIsVisible(true);
     
+    // Fallback: forcefully keep visible since random disappearing was reported
+    setIsVisible(true);
+
     const moveCursor = (e: MouseEvent) => {
       cursorX.set(e.clientX); 
       cursorY.set(e.clientY); 
+      setIsVisible(true);
 
       // Detect hover over clickable elements
       const target = e.target as HTMLElement;
@@ -40,10 +44,8 @@ export default function CustomCursor() {
     window.addEventListener('mousemove', moveCursor);
     window.addEventListener('mouseenter', showCursor);
     
-    // Hide when leaving 
-    window.addEventListener('mouseout', (e) => {
-      if (!e.relatedTarget) setIsVisible(false);
-    });
+    // DO NOT hide when leaving window to prevent bugs
+    // (Removed buggy mouseout listener that was hiding cursor incorrectly)
 
     return () => {
       window.removeEventListener('mousemove', moveCursor);
@@ -51,13 +53,12 @@ export default function CustomCursor() {
     };
   }, [cursorX, cursorY]);
 
-  if (typeof window !== 'undefined' && window.matchMedia('(pointer: coarse)').matches) {
+  if (typeof document !== 'undefined' && window.matchMedia('(pointer: coarse)').matches) {
      return null;
   }
 
   return (
-    <div className="fixed inset-0 pointer-events-none z-[9999]">
-       {isVisible && (
+    <div className="fixed inset-0 pointer-events-none z-[999999]" style={{ display: isVisible ? 'block' : 'none' }}>
          <>
              {/* THE FLOOD TRAIL (Large glowing blob that follows with delay) */}
              <motion.div 
@@ -97,7 +98,6 @@ export default function CustomCursor() {
                 />
              </motion.div>
          </>
-       )}
     </div>
   );
 }
