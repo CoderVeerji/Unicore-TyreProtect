@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+@theme {
+  --color-unicore-green: #39FF14;
+  --color-unicore-black: #0a0a0a;
+  --font-sans: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
+}
+:root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+}
+
+body {
+    color: rgb(var(--foreground-rgb));
+    background: black;
+    overflow-x: hidden;
+    /* Hide horizontal scrollbar */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+html {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}

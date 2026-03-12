@@ -1,0 +1,77 @@
+[00:00:07.419] Server  LOG     ✓ Ready in 5.7s
+[00:00:10.725] Server  LOG     ○ Compiling / ...
+[00:00:19.919] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:05:49.828] Server  LOG     ✓ Compiled in 195ms
+[00:06:27.244] Server  LOG     ✓ Compiled in 169ms
+[00:06:41.629] Server  LOG     ✓ Compiled in 214ms
+[00:06:43.882] Server  LOG     ✓ Compiled in 401ms
+[00:07:00.493] Server  LOG     ✓ Compiled in 114ms
+[00:07:00.780] Server  ERROR   ⨯ ReferenceError: Navbar is not defined
+[00:07:00.978] Browser ERROR   uncaughtError: ReferenceError: Navbar is not defined
+[00:07:01.771] Browser LOG     THREE.WebGLRenderer: Context Lost.
+[00:07:09.491] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:07:09.493] Server  LOG     ✓ Compiled in 334ms
+[00:07:09.499] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:07:09.949] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:07:23.608] Server  LOG     ✓ Compiled in 2.8s
+[00:07:24.135] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:08:24.269] Server  LOG     ✓ Compiled in 140ms
+[00:15:31.476] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:20:39.368] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:21:04.351] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:22:34.860] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:23:06.474] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:39:58.029] Server  LOG     ✓ Compiled in 1222ms
+[00:41:03.072] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:41:58.217] Server  LOG     ✓ Compiled in 167ms
+[00:42:11.217] Server  LOG     ✓ Compiled in 72ms
+[00:42:24.507] Server  LOG     ✓ Compiled in 128ms
+[00:43:06.124] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:50:09.454] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:51:53.769] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:53:28.178] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:54:54.596] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:57:33.351] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:57:37.540] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:57:40.642] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:58:22.115] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:59:34.090] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:03:16.155] Server  LOG     ✓ Compiled in 27.6s
+[01:03:16.337] Browser ERROR   uncaughtError: TypeError: Cannot read properties of undefined (reading 'color')
+[01:03:17.952] Browser ERROR   uncaughtError: TypeError: Cannot read properties of undefined (reading 'color')
+[01:03:51.431] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:03:51.451] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:03:51.469] Server  LOG     ✓ Compiled in 121ms
+[01:03:52.284] Server  ERROR   ⨯ TypeError: Cannot read properties of undefined (reading 'color')
+[01:03:52.446] Server  ERROR   ⨯ TypeError: Cannot read properties of undefined (reading 'color')
+[01:03:52.829] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:03:53.025] Browser ERROR   uncaughtError: TypeError: Cannot read properties of undefined (reading 'color')
+[01:03:54.551] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:03:54.559] Server  LOG     ✓ Compiled in 947ms
+[01:03:54.595] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[01:03:55.066] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:03:55.366] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
+[01:03:55.874] Browser ERROR   uncaughtError: TypeError: Cannot read properties of undefined (reading 'color')
+[01:04:27.049] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:04:27.259] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
+[01:08:56.907] Server  LOG     ✓ Compiled in 235ms
+[01:08:58.974] Server  LOG     ✓ Compiled in 249ms
+[01:09:38.293] Server  LOG     ✓ Compiled in 129ms
+[01:10:04.684] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:10:04.920] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
+[01:10:19.245] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:10:19.952] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
+[01:17:35.686] Server  LOG     ✓ Compiled in 953ms
+[01:17:41.011] Server  LOG     ✓ Compiled in 3.5s
+[01:17:44.415] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:18:27.113] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:18:27.388] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
+[01:18:56.323] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
+[01:19:37.658] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:19:38.186] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
+[01:28:15.290] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:28:15.723] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
+[01:28:22.536] Server  LOG     ✓ Compiled in 8.6s
+[01:28:30.500] Server  LOG     ✓ Compiled in 5.7s
+[01:29:04.905] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[01:29:05.248] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.

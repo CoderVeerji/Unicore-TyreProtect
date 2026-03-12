@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Claude Code — Installation Guide</title>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600;700&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #080c10;
+      --surface: #0d1117;
+      --surface2: #161b22;
+      --border: #21262d;
+      --green: #39d353;
+      --green-dim: #238636;
+      --cyan: #79c0ff;
+      --orange: #f78166;
+      --purple: #bc8cff;
+      --text: #e6edf3;
+      --text-muted: #8b949e;
+      --glow: rgba(57, 211, 83, 0.15);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'JetBrains Mono', monospace;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ── GRID BACKGROUND ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(57,211,83,.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(57,211,83,.03) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 80px 24px 60px;
+      overflow: hidden;
+    }
+
+    .hero-glow {
+      position: absolute;
+      top: -80px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 600px;
+      height: 400px;
+      background: radial-gradient(ellipse, rgba(57,211,83,.18) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(57,211,83,.1);
+      border: 1px solid rgba(57,211,83,.3);
+      border-radius: 100px;
+      padding: 6px 16px;
+      font-size: 11px;
+      color: var(--green);
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 28px;
+      animation: fadeDown .6s ease both;
+    }
+
+    .badge .dot {
+      width: 7px; height: 7px;
+      background: var(--green);
+      border-radius: 50%;
+      animation: pulse 2s ease infinite;
+    }
+
+    @keyframes pulse {
+      0%,100% { opacity:1; transform:scale(1); }
+      50% { opacity:.4; transform:scale(.7); }
+    }
+
+    h1 {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(42px, 7vw, 84px);
+      font-weight: 800;
+      line-height: 1.0;
+      letter-spacing: -2px;
+      animation: fadeDown .7s .1s ease both;
+    }
+
+    h1 span.green { color: var(--green); }
+    h1 span.dim   { color: var(--text-muted); font-weight: 400; }
+
+    .hero-sub {
+      margin-top: 20px;
+      font-size: 15px;
+      color: var(--text-muted);
+      max-width: 480px;
+      margin-inline: auto;
+      line-height: 1.7;
+      animation: fadeDown .8s .2s ease both;
+    }
+
+    /* ── OS TABS ── */
+    .tab-wrapper {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      justify-content: center;
+      gap: 0;
+      margin: 48px auto 0;
+      max-width: 340px;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 4px;
+      animation: fadeDown .9s .3s ease both;
+    }
+
+    .tab-btn {
+      flex: 1;
+      padding: 10px 24px;
+      border: none;
+      border-radius: 9px;
+      background: transparent;
+      color: var(--text-muted);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      cursor: pointer;
+      transition: all .25s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .tab-btn.active {
+      background: var(--green-dim);
+      color: #fff;
+      box-shadow: 0 0 20px rgba(57,211,83,.25);
+    }
+
+    .tab-btn:hover:not(.active) { color: var(--text); }
+
+    .tab-icon { font-size: 16px; }
+
+    /* ── MAIN CONTENT ── */
+    main {
+      position: relative;
+      z-index: 1;
+      max-width: 780px;
+      margin: 60px auto 80px;
+      padding: 0 24px;
+    }
+
+    .os-panel { display: none; }
+    .os-panel.active { display: block; animation: fadeIn .4s ease; }
+
+    @keyframes fadeIn { from { opacity:0; transform:translateY(12px); } to { opacity:1; transform:none; } }
+    @keyframes fadeDown { from { opacity:0; transform:translateY(-14px); } to { opacity:1; transform:none; } }
+
+    /* ── STEP CARD ── */
+    .step {
+      display: grid;
+      grid-template-columns: 56px 1fr;
+      gap: 0 24px;
+      margin-bottom: 32px;
+      position: relative;
+    }
+
+    .step:not(:last-child) .step-line {
+      position: absolute;
+      left: 27px;
+      top: 56px;
+      bottom: -32px;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--green-dim), transparent);
+    }
+
+    .step-num {
+      width: 56px;
+      height: 56px;
+      border-radius: 14px;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Syne', sans-serif;
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--green);
+      flex-shrink: 0;
+      position: relative;
+      z-index: 1;
+      transition: all .3s;
+    }
+
+    .step:hover .step-num {
+      background: rgba(57,211,83,.12);
+      border-color: var(--green-dim);
+      box-shadow: 0 0 24px var(--glow);
+    }
+
+    .step-body {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: border-color .3s;
+    }
+
+    .step:hover .step-body { border-color: rgba(57,211,83,.3); }
+
+    .step-header {
+      padding: 20px 24px 16px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .step-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+
+    .step-desc {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* ── TERMINAL BLOCK ── */
+    .terminal {
+      background: #010409;
+      border-radius: 0 0 14px 14px;
+    }
+
+    .term-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 16px;
+      background: #161b22;
+      border-bottom: 1px solid #21262d;
+    }
+
+    .term-dots {
+      display: flex;
+      gap: 6px;
+    }
+
+    .term-dots span {
+      width: 11px; height: 11px;
+      border-radius: 50%;
+    }
+
+    .term-dots .red    { background: #ff5f56; }
+    .term-dots .yellow { background: #ffbd2e; }
+    .term-dots .green  { background: #27c93f; }
+
+    .term-label {
+      font-size: 10px;
+      color: var(--text-muted);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .copy-btn {
+      background: transparent;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 4px 10px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all .2s;
+      letter-spacing: .5px;
+    }
+
+    .copy-btn:hover { border-color: var(--green-dim); color: var(--green); }
+    .copy-btn.copied { border-color: var(--green); color: var(--green); }
+
+    .term-code {
+      padding: 20px 24px;
+      font-size: 13px;
+      line-height: 1.8;
+      overflow-x: auto;
+    }
+
+    .prompt { color: var(--green); user-select: none; }
+    .cmd    { color: var(--text); }
+    .flag   { color: var(--cyan); }
+    .url    { color: var(--orange); }
+    .comment{ color: var(--text-muted); font-style: italic; }
+    .str    { color: var(--purple); }
+
+    /* ── INFO BOXES ── */
+    .info-box {
+      margin: 12px 24px 20px;
+      padding: 12px 16px;
+      border-radius: 10px;
+      font-size: 12px;
+      line-height: 1.7;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+
+    .info-box.tip   { background: rgba(57,211,83,.07);  border: 1px solid rgba(57,211,83,.2);  color: #7ee787; }
+    .info-box.note  { background: rgba(121,192,255,.07); border: 1px solid rgba(121,192,255,.2); color: var(--cyan); }
+    .info-box.warn  { background: rgba(247,129,102,.07); border: 1px solid rgba(247,129,102,.2); color: var(--orange); }
+
+    .info-box .icon { font-size: 15px; flex-shrink: 0; margin-top: 1px; }
+
+    /* ── SECTION DIVIDER ── */
+    .section-label {
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 28px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* ── DOWNLOAD OLLAMA CARD ── */
+    .download-card {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 16px 20px;
+      background: #010409;
+      border-radius: 10px;
+      margin: 16px 24px 20px;
+      border: 1px dashed var(--border);
+      transition: border-color .3s;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .download-card:hover { border-color: var(--green-dim); }
+
+    .dl-icon {
+      width: 40px; height: 40px;
+      background: var(--surface2);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+
+    .dl-text { flex: 1; }
+    .dl-name { font-size: 13px; font-weight: 600; color: var(--text); }
+    .dl-sub  { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
+    .dl-arrow{ font-size: 18px; color: var(--green); }
+
+    /* ── FINAL LAUNCH ── */
+    .launch-block {
+      margin-top: 48px;
+      background: linear-gradient(135deg, rgba(57,211,83,.08), rgba(121,192,255,.05));
+      border: 1px solid rgba(57,211,83,.25);
+      border-radius: 20px;
+      padding: 36px;
+      text-align: center;
+    }
+
+    .launch-icon { font-size: 48px; margin-bottom: 16px; }
+
+    .launch-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 26px;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    .launch-sub { font-size: 13px; color: var(--text-muted); margin-bottom: 28px; line-height: 1.7; }
+
+    .launch-terminal {
+      background: #010409;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px 28px;
+      display: inline-block;
+      font-size: 22px;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 32px 24px 48px;
+      font-size: 11px;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border);
+    }
+
+    footer a { color: var(--green); text-decoration: none; }
+
+    /* ── SCROLL REVEAL ── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity .6s ease, transform .6s ease;
+    }
+
+    .reveal.visible { opacity: 1; transform: none; }
+  </style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-glow"></div>
+  <div class="badge"><span class="dot"></span> Installation Guide</div>
+  <h1>
+    Run <span class="green">Claude</span><br/>
+    <span class="dim">on your machine</span>
+  </h1>
+  <p class="hero-sub">
+    Step-by-step guide to install and launch Claude Code locally.<br/>
+    Works on <strong style="color:var(--text)">macOS</strong> &amp; <strong style="color:var(--text)">Windows</strong>.
+  </p>
+
+  <!-- OS TABS -->
+  <div class="tab-wrapper">
+    <button class="tab-btn active" onclick="switchOS('mac')" id="tab-mac">
+      <span class="tab-icon">🍎</span> macOS
+    </button>
+    <button class="tab-btn" onclick="switchOS('win')" id="tab-win">
+      <span class="tab-icon">🪟</span> Windows
+    </button>
+  </div>
+</section>
+
+<!-- MAIN -->
+<main>
+
+  <!-- ═══════════════════ MAC ═══════════════════ -->
+  <div class="os-panel active" id="panel-mac">
+
+    <div class="section-label">macOS steps</div>
+
+    <!-- STEP 1 -->
+    <div class="step reveal">
+      <div class="step-line"></div>
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <div class="step-header">
+          <div class="step-title">Install Claude Code via CLI</div>
+          <div class="step-desc">Run this single command in your Terminal. It downloads and installs Claude Code automatically.</div>
+        </div>
+        <div class="terminal">
+          <div class="term-bar">
+            <div class="term-dots">
+              <span class="red"></span><span class="yellow"></span><span class="green"></span>
+            </div>
+            <span class="term-label">Terminal</span>
+            <button class="copy-btn" onclick="copyCmd(this, 'curl -fsSL https://claude.ai/install.sh | bash')">Copy</button>
+          </div>
+          <div class="term-code">
+            <span class="prompt">$ </span><span class="cmd">curl </span><span class="flag">-fsSL</span> <span class="url">https://claude.ai/install.sh</span> <span class="cmd">| bash</span>
+          </div>
+        </div>
+        <div class="info-box tip">
+          <span class="icon">💡</span>
+          Open Terminal via <strong>Spotlight (⌘ Space)</strong> → type "Terminal" → press Enter.
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 2 -->
+    <div class="step reveal">
+      <div class="step-line"></div>
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <div class="step-header">
+          <div class="step-title">Download &amp; Sign In to Ollama</div>
+          <div class="step-desc">Ollama lets you run large language models locally. Download it and sign in with Google.</div>
+        </div>
+        <a class="download-card" href="https://ollama.com/download" target="_blank">
+          <div class="dl-icon">🦙</div>
+          <div class="dl-text">
+            <div class="dl-name">ollama.com/download</div>
+            <div class="dl-sub">Download the macOS app — requires macOS 12 or later</div>
+          </div>
+          <span class="dl-arrow">↗</span>
+        </a>
+        <div class="info-box note">
+          <span class="icon">ℹ️</span>
+          After installing, open Ollama from Applications and log in using your Google account when prompted.
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 3 -->
+    <div class="step reveal">
+      <div class="step-line"></div>
+      <div class="step-num">3</div>
+      <div class="step-body">
+        <div class="step-header">
+          <div class="step-title">Launch Claude via Ollama</div>
+          <div class="step-desc">Pull and run the Claude model through Ollama's CLI.</div>
+        </div>
+        <div class="terminal">
+          <div class="term-bar">
+            <div class="term-dots">
+              <span class="red"></span><span class="yellow"></span><span class="green"></span>
+            </div>
+            <span class="term-label">Terminal</span>
+            <button class="copy-btn" onclick="copyCmd(this, 'ollama run claude')">Copy</button>
+          </div>
+          <div class="term-code">
+            <span class="comment"># Pull and launch Claude model</span><br/>
+            <span class="prompt">$ </span><span class="cmd">ollama run claude</span>
+          </div>
+        </div>
+        <div class="info-box tip">
+          <span class="icon">⚡</span>
+          First run downloads the model. This may take a few minutes depending on your connection.
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 4 -->
+    <div class="step reveal">
+      <div class="step-num">4</div>
+      <div class="step-body">
+        <div class="step-header">
+          <div class="step-title">Start Claude Code</div>
+          <div class="step-desc">You're ready! Launch Claude Code from your terminal in any project directory.</div>
+        </div>
+        <div class="terminal">
+          <div class="term-bar">
+            <div class="term-dots">
+              <span class="red"></span><span class="yellow"></span><span class="green"></span>
+            </div>
+            <span class="term-label">Terminal</span>
+            <button class="copy-btn" onclick="copyCmd(this, 'claude')">Copy</button>
+          </div>
+          <div class="term-code">
+            <span class="comment"># Navigate to your project first (optional)</span><br/>
+            <span class="prompt">$ </span><span class="cmd">cd </span><span class="str">~/your-project</span><br/><br/>
+            <span class="comment"># Launch Claude Code</span><br/>
+            <span class="prompt">$ </span><span class="cmd">claude</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- end mac panel -->
+
+
+  <!-- ═══════════════════ WINDOWS ═══════════════════ -->
+  <div class="os-panel" id="panel-win">
+
+    <div class="section-label">Windows steps</div>
+
+    <!-- STEP 1 -->
+    <div class="step reveal">
+      <div class="step-line"></div>
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <div class="step-header">
+          <div class="step-title">Install Claude Code via PowerShell</div>
+          <div class="step-desc">Open <strong>PowerShell as Administrator</strong> and run the install command below.</div>
+        </div>
+        <div class="terminal">
+          <div class="term-bar">
+            <div class="term-dots">
+              <span class="red"></span><span class="yellow"></span><span class="green"></span>
+            </div>
+            <span class="term-label">PowerShell (Admin)</span>
+            <button class="copy-btn" onclick="copyCmd(this, 'irm https://claude.ai/install.ps1 | iex')">Copy</button>
+          </div>
+          <div class="term-code">
+            <span class="comment"># Option A — PowerShell installer</span><br/>
+            <span class="prompt">PS&gt; </span><span class="cmd">irm </span><span class="url">https://claude.ai/install.ps1</span><span class="cmd"> | iex</span><br/><br/>
+            <span class="comment"># Option B — via npm (Node.js required)</span><br/>
+            <span class="prompt">PS&gt; </span><span class="cmd">npm install </span><span class="flag">-g</span> <span class="str">@anthropic-ai/claude-code</span>
+          </div>
+        </div>
+        <div class="info-box note">
+          <span class="icon">ℹ️</span>
+          To open PowerShell as Admin: Press <strong>Win + X</strong> → click <strong>"Windows PowerShell (Admin)"</strong> or <strong>"Terminal (Admin)"</strong>.
+        </div>
+        <div class="info-box warn">
+          <span class="icon">⚠️</span>
+          If you get a script execution error, first run:<br/>
+          <code style="color:var(--orange)">Set-ExecutionPolicy RemoteSigned -Scope CurrentUser</code>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 2 -->
+    <div class="step reveal">
+      <div class="step-line"></div>
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <div class="step-header">
+          <div class="step-title">Download &amp; Sign In to Ollama</div>
+          <div class="step-desc">Ollama has a native Windows installer. Download it and sign in with Google.</div>
+        </div>
+        <a class="download-card" href="https://ollama.com/download/windows" target="_blank">
+          <div class="dl-icon">🦙</div>
+          <div class="dl-text">
+            <div class="dl-name">ollama.com/download/windows</div>
+            <div class="dl-sub">Windows installer (.exe) — requires Windows 10/11 (64-bit)</div>
+          </div>
+          <span class="dl-arrow">↗</span>
+        </a>
+        <div class="info-box note">
+          <span class="icon">ℹ️</span>
+          After install, Ollama runs in the system tray. Open it and log in with your Google account.
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 3 -->
+    <div class="step reveal">
+      <div class="step-line"></div>
+      <div class="step-num">3</div>
+      <div class="step-body">
+        <div class="step-header">
+          <div class="step-title">Launch Claude via Ollama</div>
+          <div class="step-desc">Open a new PowerShell or Command Prompt window and pull the Claude model.</div>
+        </div>
+        <div class="terminal">
+          <div class="term-bar">
+            <div class="term-dots">
+              <span class="red"></span><span class="yellow"></span><span class="green"></span>
+            </div>
+            <span class="term-label">PowerShell / CMD</span>
+            <button class="copy-btn" onclick="copyCmd(this, 'ollama run claude')">Copy</button>
+          </div>
+          <div class="term-code">
+            <span class="comment"># Pull and launch Claude model</span><br/>
+            <span class="prompt">PS&gt; </span><span class="cmd">ollama run claude</span>
+          </div>
+        </div>
+        <div class="info-box tip">
+          <span class="icon">⚡</span>
+          First run downloads the model — grab a coffee! Subsequent launches are instant.
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 4 -->
+    <div class="step reveal">
+      <div class="step-num">4</div>
+      <div class="step-body">
+        <div class="step-header">
+          <div class="step-title">Start Claude Code</div>
+          <div class="step-desc">Open a new PowerShell or CMD window inside your project folder and run claude.</div>
+        </div>
+        <div class="terminal">
+          <div class="term-bar">
+            <div class="term-dots">
+              <span class="red"></span><span class="yellow"></span><span class="green"></span>
+            </div>
+            <span class="term-label">PowerShell / CMD</span>
+            <button class="copy-btn" onclick="copyCmd(this, 'claude')">Copy</button>
+          </div>
+          <div class="term-code">
+            <span class="comment"># Navigate to your project first (optional)</span><br/>
+            <span class="prompt">PS&gt; </span><span class="cmd">cd </span><span class="str">C:\Users\YourName\your-project</span><br/><br/>
+            <span class="comment"># Launch Claude Code</span><br/>
+            <span class="prompt">PS&gt; </span><span class="cmd">claude</span>
+          </div>
+        </div>
+        <div class="info-box tip">
+          <span class="icon">💡</span>
+          <strong>Pro tip:</strong> Right-click any folder in Explorer → <em>"Open in Terminal"</em> to skip the cd step!
+        </div>
+      </div>
+    </div>
+
+  </div><!-- end win panel -->
+
+
+  <!-- ═════ LAUNCH BLOCK ═════ -->
+  <div class="launch-block reveal">
+    <div class="launch-icon">🚀</div>
+    <div class="launch-title">You're all set!</div>
+    <p class="launch-sub">
+      Claude Code is running locally on your machine.<br/>
+      Navigate to any project folder and type <code style="color:var(--green)">claude</code> to start coding with AI.
+    </p>
+    <div class="launch-terminal">
+      <span class="prompt">$ </span><span class="cmd">claude</span><span style="animation:blink 1s step-end infinite;color:var(--green)">█</span>
+    </div>
+  </div>
+
+  <style>
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+  </style>
+
+</main>
+
+<footer>
+  Made for Claude Code learners ·
+  Official docs at <a href="https://docs.claude.com" target="_blank">docs.claude.com</a> ·
+  <a href="https://ollama.com" target="_blank">ollama.com</a>
+</footer>
+
+<script>
+  // ── TAB SWITCHER
+  function switchOS(os) {
+    document.querySelectorAll('.os-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('panel-' + os).classList.add('active');
+    document.getElementById('tab-' + os).classList.add('active');
+    // Re-trigger reveals
+    document.querySelectorAll('#panel-' + os + ' .reveal').forEach((el, i) => {
+      el.classList.remove('visible');
+      setTimeout(() => el.classList.add('visible'), i * 120);
+    });
+  }
+
+  // ── COPY BUTTON
+  function copyCmd(btn, text) {
+    navigator.clipboard.writeText(text).then(() => {
+      btn.textContent = 'Copied!';
+      btn.classList.add('copied');
+      setTimeout(() => { btn.textContent = 'Copy'; btn.classList.remove('copied'); }, 2000);
+    });
+  }
+
+  // ── SCROLL REVEAL
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
