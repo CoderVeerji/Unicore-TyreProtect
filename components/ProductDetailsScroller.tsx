@@ -72,11 +72,11 @@ export default function ProductDetailsScroller({ selected }: { selected: number 
     <div ref={ref} className="relative w-full h-[600vh] bg-[#050505]">
       <div className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden perspective-[1000px] px-6">
         
-        {/* Dynamic Glowing Background */}
+        {/* Dynamic Glowing Background (Optimized) */}
         <motion.div 
-           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120vw] md:w-[60vw] h-[120vw] md:h-[60vw] rounded-full blur-[140px] opacity-20 pointer-events-none"
-           style={{ backgroundColor: product.color }}
-           animate={{ scale: [1, 1.5, 1], opacity: [0.1, 0.4, 0.1] }}
+           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[100vw] md:w-[50vw] h-[100vw] md:h-[50vw] rounded-full opacity-20 pointer-events-none"
+           style={{ backgroundColor: product.color, filter: 'blur(80px)' }}
+           animate={{ scale: [1, 1.2, 1], opacity: [0.1, 0.2, 0.1] }}
            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
         />
 
@@ -125,7 +125,7 @@ export default function ProductDetailsScroller({ selected }: { selected: number 
             </h2>
             <div className="space-y-6 relative z-10">
                 <p className="text-gray-300 text-base md:text-lg leading-relaxed font-light">
-                  {product.description}
+                  Our microscopic smart-fibers and advanced polymers rush to any puncture site instantly, effectively sealing it from the inside without requiring you to stop or fix it.
                 </p>
                 <div className="w-16 h-[2px] rounded-full group-hover:w-full transition-all duration-700" style={{ backgroundColor: product.color }} />
                 <p className="text-gray-400 text-sm md:text-base leading-relaxed group-hover:text-gray-200 transition-colors">
@@ -189,8 +189,8 @@ export default function ProductDetailsScroller({ selected }: { selected: number 
               <img 
                 src={product.image} 
                 alt={product.name}
-                className="w-full h-full object-contain filter drop-shadow-[0_40px_50px_rgba(0,0,0,0.8)]"
-                style={{ filter: `drop-shadow(0 30px 40px ${product.color}50)` }}
+                className="w-full h-full object-contain"
+                style={{ filter: `drop-shadow(0 20px 30px ${product.color}40) drop-shadow(0 0 10px rgba(0,0,0,0.5))` }}
               />
           </motion.div>
         </motion.div>

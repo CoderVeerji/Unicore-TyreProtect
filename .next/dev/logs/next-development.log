@@ -87,3 +87,18 @@
 [02:01:20.041] Server  LOG     ✓ Compiled in 4.1s
 [02:01:20.995] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
 [02:01:21.285] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
+[02:09:00.106] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/. Falling back to browser navigation. {}
+[02:09:00.118] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/. Falling back to browser navigation. {}
+[02:09:00.120] Browser ERROR   Failed to fetch RSC payload for http://localhost:3000/. Falling back to browser navigation. {}
+[02:09:00.120] Browser ERROR   unhandledRejection: undefined
+[02:09:00.120] Browser ERROR   unhandledRejection: undefined
+[02:09:00.120] Browser ERROR   unhandledRejection: undefined
+[02:09:08.209] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:09:08.936] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
+[02:10:53.460] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:10:53.964] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
+[02:11:05.256] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[02:11:05.967] Browser WARN    Please ensure that the container has a non-static position, like 'relative', 'fixed', or 'absolute' to ensure scroll offset is calculated correctly.
+[02:14:24.615] Server  LOG     ✓ Compiled in 1374ms
+[02:14:28.728] Server  LOG     ✓ Compiled in 653ms
+[02:14:30.520] Server  LOG     ✓ Compiled in 451ms

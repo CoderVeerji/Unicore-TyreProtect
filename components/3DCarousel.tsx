@@ -19,16 +19,16 @@ export default function CarouselHero({
 
   return (
     <section className="relative w-full min-h-screen bg-unicore-black text-white flex flex-col items-center justify-center pt-20 px-4 md:px-12 overflow-hidden">
-      {/* Background glow syncing with product color */}
+      {/* Background glow syncing with product color (Optimized for performance) */}
       <AnimatePresence mode="popLayout">
           <motion.div 
              key={`bg-${selected}`}
-             initial={{ filter: 'blur(100px)', scale: 0.1, opacity: 0 }}
-             animate={{ filter: 'blur(120px)', scale: 1, opacity: 0.5 }}
-             exit={{ filter: 'blur(150px)', scale: 2, opacity: 0 }}
-             transition={{ duration: 1.2, ease: "easeInOut" }}
-             className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150vw] h-[150vw] md:w-[80vw] md:h-[80vw] rounded-full pointer-events-none"
-             style={{ background: `radial-gradient(circle, ${currentProduct.color}50 0%, transparent 70%)` }}
+             initial={{ filter: 'blur(80px)', opacity: 0 }}
+             animate={{ opacity: 0.6 }}
+             exit={{ opacity: 0 }}
+             transition={{ duration: 1 }}
+             className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120vw] h-[120vw] md:w-[70vw] md:h-[70vw] rounded-full pointer-events-none"
+             style={{ background: `radial-gradient(circle, ${currentProduct.color}40 0%, transparent 60%)` }}
           />
       </AnimatePresence>
       <div className="absolute inset-0 pointer-events-none opacity-20" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)', backgroundSize: '40px 40px' }} />

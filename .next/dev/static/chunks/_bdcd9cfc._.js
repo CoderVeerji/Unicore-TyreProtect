@@ -81,27 +81,21 @@ function CarouselHero({ selected, setSelected }) {
                 mode: "popLayout",
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
                     initial: {
-                        filter: 'blur(100px)',
-                        scale: 0.1,
+                        filter: 'blur(80px)',
                         opacity: 0
                     },
                     animate: {
-                        filter: 'blur(120px)',
-                        scale: 1,
-                        opacity: 0.5
+                        opacity: 0.6
                     },
                     exit: {
-                        filter: 'blur(150px)',
-                        scale: 2,
                         opacity: 0
                     },
                     transition: {
-                        duration: 1.2,
-                        ease: "easeInOut"
+                        duration: 1
                     },
-                    className: "absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[150vw] h-[150vw] md:w-[80vw] md:h-[80vw] rounded-full pointer-events-none",
+                    className: "absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120vw] h-[120vw] md:w-[70vw] md:h-[70vw] rounded-full pointer-events-none",
                     style: {
-                        background: `radial-gradient(circle, ${currentProduct.color}50 0%, transparent 70%)`
+                        background: `radial-gradient(circle, ${currentProduct.color}40 0%, transparent 60%)`
                     }
                 }, `bg-${selected}`, false, {
                     fileName: "[project]/components/3DCarousel.tsx",
@@ -665,19 +659,20 @@ function ProductDetailsScroller({ selected }) {
             className: "sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden perspective-[1000px] px-6",
             children: [
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["motion"].div, {
-                    className: "absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120vw] md:w-[60vw] h-[120vw] md:h-[60vw] rounded-full blur-[140px] opacity-20 pointer-events-none",
+                    className: "absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[100vw] md:w-[50vw] h-[100vw] md:h-[50vw] rounded-full opacity-20 pointer-events-none",
                     style: {
-                        backgroundColor: product.color
+                        backgroundColor: product.color,
+                        filter: 'blur(80px)'
                     },
                     animate: {
                         scale: [
                             1,
-                            1.5,
+                            1.2,
                             1
                         ],
                         opacity: [
                             0.1,
-                            0.4,
+                            0.2,
                             0.1
                         ]
                     },
@@ -822,7 +817,7 @@ function ProductDetailsScroller({ selected }) {
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                         className: "text-gray-300 text-base md:text-lg leading-relaxed font-light",
-                                        children: product.description
+                                        children: "Our microscopic smart-fibers and advanced polymers rush to any puncture site instantly, effectively sealing it from the inside without requiring you to stop or fix it."
                                     }, void 0, false, {
                                         fileName: "[project]/components/ProductDetailsScroller.tsx",
                                         lineNumber: 127,
@@ -1025,9 +1020,9 @@ function ProductDetailsScroller({ selected }) {
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
                             src: product.image,
                             alt: product.name,
-                            className: "w-full h-full object-contain filter drop-shadow-[0_40px_50px_rgba(0,0,0,0.8)]",
+                            className: "w-full h-full object-contain",
                             style: {
-                                filter: `drop-shadow(0 30px 40px ${product.color}50)`
+                                filter: `drop-shadow(0 20px 30px ${product.color}40) drop-shadow(0 0 10px rgba(0,0,0,0.5))`
                             }
                         }, void 0, false, {
                             fileName: "[project]/components/ProductDetailsScroller.tsx",
