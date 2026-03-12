@@ -383,23 +383,38 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$mo
 ;
 function CustomCursor() {
     const [isVisible, setIsVisible] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
-    // Create reactive framer-motion values for instant smooth updates without re-renders.
+    const [isHovering, setIsHovering] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(false);
     const cursorX = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$value$2f$use$2d$motion$2d$value$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useMotionValue"])(-100);
     const cursorY = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$value$2f$use$2d$motion$2d$value$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useMotionValue"])(-100);
-    // Use springs to give the glow slightly trailing follow effect
-    const springConfig = {
-        damping: 25,
-        stiffness: 200,
-        mass: 0.5
+    // A very damped spring for the large trailing flood blob
+    const floodSpringConfig = {
+        damping: 40,
+        stiffness: 120,
+        mass: 1
     };
-    const cursorXSpring = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$value$2f$use$2d$spring$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useSpring"])(cursorX, springConfig);
-    const cursorYSpring = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$value$2f$use$2d$spring$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useSpring"])(cursorY, springConfig);
+    const floodX = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$value$2f$use$2d$spring$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useSpring"])(cursorX, floodSpringConfig);
+    const floodY = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$value$2f$use$2d$spring$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useSpring"])(cursorY, floodSpringConfig);
+    // A fast spring for the leading dot
+    const dotSpringConfig = {
+        damping: 25,
+        stiffness: 300,
+        mass: 0.2
+    };
+    const dotX = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$value$2f$use$2d$spring$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useSpring"])(cursorX, dotSpringConfig);
+    const dotY = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$value$2f$use$2d$spring$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useSpring"])(cursorY, dotSpringConfig);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
         // Show cursor when mounted and mouse moves
         const showCursor = ()=>setIsVisible(true);
         const moveCursor = (e)=>{
-            cursorX.set(e.clientX - 16); // offset by half width to center 
-            cursorY.set(e.clientY - 16);
+            cursorX.set(e.clientX);
+            cursorY.set(e.clientY);
+            // Detect hover over clickable elements
+            const target = e.target;
+            if (target && target.closest('button, a, input, textarea, select, [role="button"], .cursor-pointer, .group')) {
+                setIsHovering(true);
+            } else {
+                setIsHovering(false);
+            }
         };
         window.addEventListener('mousemove', moveCursor);
         window.addEventListener('mouseenter', showCursor);
@@ -420,28 +435,61 @@ function CustomCursor() {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: "fixed inset-0 pointer-events-none z-[9999]",
         children: isVisible && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Fragment"], {
-            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
-                className: "fixed top-0 left-0 w-8 h-8 rounded-full border border-white/30 flex items-center justify-center backdrop-blur-sm shadow-[0_0_10px_rgba(255,255,255,0.2)]",
-                style: {
-                    x: cursorXSpring,
-                    y: cursorYSpring
-                },
-                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                    className: "w-1 h-1 bg-white rounded-full pointer-events-none shadow-[0_0_10px_white]"
+            children: [
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
+                    className: "fixed top-0 left-0 rounded-full mix-blend-screen pointer-events-none",
+                    style: {
+                        x: floodX,
+                        y: floodY,
+                        translateX: '-50%',
+                        translateY: '-50%',
+                        width: isHovering ? '250px' : '150px',
+                        height: isHovering ? '250px' : '150px',
+                        backgroundColor: 'var(--product-color, #39FF14)',
+                        filter: 'blur(40px)',
+                        opacity: isHovering ? 0.3 : 0.15
+                    }
                 }, void 0, false, {
                     fileName: "[project]/components/CustomCursor.tsx",
-                    lineNumber: 58,
-                    columnNumber: 17
+                    lineNumber: 63,
+                    columnNumber: 14
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
+                    className: "fixed top-0 left-0 flex items-center justify-center pointer-events-none",
+                    style: {
+                        x: dotX,
+                        y: dotY,
+                        translateX: '-50%',
+                        translateY: '-50%'
+                    },
+                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
+                        className: "rounded-full shadow-[0_0_15px_var(--product-color)]",
+                        style: {
+                            width: isHovering ? '50px' : '10px',
+                            height: isHovering ? '50px' : '10px',
+                            backgroundColor: isHovering ? 'transparent' : 'white',
+                            border: isHovering ? '2px solid var(--product-color, #39FF14)' : 'none'
+                        },
+                        transition: {
+                            type: 'spring',
+                            stiffness: 300,
+                            damping: 20
+                        }
+                    }, void 0, false, {
+                        fileName: "[project]/components/CustomCursor.tsx",
+                        lineNumber: 88,
+                        columnNumber: 17
+                    }, this)
+                }, void 0, false, {
+                    fileName: "[project]/components/CustomCursor.tsx",
+                    lineNumber: 79,
+                    columnNumber: 14
                 }, this)
-            }, void 0, false, {
-                fileName: "[project]/components/CustomCursor.tsx",
-                lineNumber: 51,
-                columnNumber: 14
-            }, this)
-        }, void 0, false)
+            ]
+        }, void 0, true)
     }, void 0, false, {
         fileName: "[project]/components/CustomCursor.tsx",
-        lineNumber: 47,
+        lineNumber: 59,
         columnNumber: 5
     }, this);
 }

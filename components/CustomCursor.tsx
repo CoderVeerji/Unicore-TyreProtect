@@ -7,22 +7,26 @@ export default function CustomCursor() {
   const [isVisible, setIsVisible] = useState(false);
   const [isHovering, setIsHovering] = useState(false);
   
-  // Create reactive framer-motion values for instant smooth updates without re-renders.
   const cursorX = useMotionValue(-100);
   const cursorY = useMotionValue(-100);
 
-  // Use springs to give the glow slightly trailing follow effect
-  const springConfig = { damping: 25, stiffness: 200, mass: 0.5 };
-  const cursorXSpring = useSpring(cursorX, springConfig);
-  const cursorYSpring = useSpring(cursorY, springConfig);
+  // A very damped spring for the large trailing flood blob
+  const floodSpringConfig = { damping: 40, stiffness: 120, mass: 1 };
+  const floodX = useSpring(cursorX, floodSpringConfig);
+  const floodY = useSpring(cursorY, floodSpringConfig);
+
+  // A fast spring for the leading dot
+  const dotSpringConfig = { damping: 25, stiffness: 300, mass: 0.2 };
+  const dotX = useSpring(cursorX, dotSpringConfig);
+  const dotY = useSpring(cursorY, dotSpringConfig);
 
   useEffect(() => {
     // Show cursor when mounted and mouse moves
     const showCursor = () => setIsVisible(true);
     
     const moveCursor = (e: MouseEvent) => {
-      cursorX.set(e.clientX - 16); // offset by half width to center 
-      cursorY.set(e.clientY - 16); 
+      cursorX.set(e.clientX); 
+      cursorY.set(e.clientY); 
 
       // Detect hover over clickable elements
       const target = e.target as HTMLElement;
@@ -48,7 +52,6 @@ export default function CustomCursor() {
   }, [cursorX, cursorY]);
 
   if (typeof window !== 'undefined' && window.matchMedia('(pointer: coarse)').matches) {
-     // Touch devices do not need a custom mouse cursor.
      return null;
   }
 
@@ -56,30 +59,41 @@ export default function CustomCursor() {
     <div className="fixed inset-0 pointer-events-none z-[9999]">
        {isVisible && (
          <>
+             {/* THE FLOOD TRAIL (Large glowing blob that follows with delay) */}
              <motion.div 
-               className="fixed top-0 left-0 w-8 h-8 rounded-full border flex items-center justify-center backdrop-blur-sm transition-colors duration-200"
+               className="fixed top-0 left-0 rounded-full mix-blend-screen pointer-events-none"
                style={{
-                 x: cursorXSpring,
-                 y: cursorYSpring,
-                 borderColor: isHovering ? '#39FF14' : 'rgba(255,255,255,0.3)',
-                 backgroundColor: isHovering ? 'rgba(57,255,20,0.1)' : 'transparent',
-                 boxShadow: isHovering ? '0 0 20px rgba(57,255,20,0.4)' : '0 0 10px rgba(255,255,255,0.2)'
+                 x: floodX,
+                 y: floodY,
+                 translateX: '-50%',
+                 translateY: '-50%',
+                 width: isHovering ? '250px' : '150px',
+                 height: isHovering ? '250px' : '150px',
+                 backgroundColor: 'var(--product-color, #39FF14)',
+                 filter: 'blur(40px)',
+                 opacity: isHovering ? 0.3 : 0.15,
                }}
-               animate={{
-                 scale: isHovering ? 1.5 : 1,
+             />
+
+             {/* THE DOT / RING */}
+             <motion.div 
+               className="fixed top-0 left-0 flex items-center justify-center pointer-events-none"
+               style={{
+                 x: dotX,
+                 y: dotY,
+                 translateX: '-50%',
+                 translateY: '-50%',
                }}
-               transition={{ type: 'spring', stiffness: 300, damping: 20 }}
              >
                 <motion.div 
-                   className="w-1 h-1 rounded-full pointer-events-none transition-colors duration-200" 
+                   className="rounded-full shadow-[0_0_15px_var(--product-color)]"
                    style={{
-                      backgroundColor: isHovering ? '#39FF14' : 'white',
-                      boxShadow: isHovering ? '0 0 10px #39FF14' : '0 0 10px white'
+                      width: isHovering ? '50px' : '10px',
+                      height: isHovering ? '50px' : '10px',
+                      backgroundColor: isHovering ? 'transparent' : 'white',
+                      border: isHovering ? '2px solid var(--product-color, #39FF14)' : 'none',
                    }}
-                   animate={{
-                      scale: isHovering ? 0 : 1,
-                      opacity: isHovering ? 0 : 1
-                   }}
+                   transition={{ type: 'spring', stiffness: 300, damping: 20 }}
                 />
              </motion.div>
          </>

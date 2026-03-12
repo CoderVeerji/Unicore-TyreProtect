@@ -70,6 +70,16 @@ export default function ProductDetailsScroller({ selected }: { selected: number 
 
   return (
     <div ref={ref} className="relative w-full h-[600vh] bg-[#050505]">
+      {/* SVG filter for the squiggly electric lines */}
+      <svg className="absolute pointer-events-none w-0 h-0 hidden">
+        <filter id="electricity">
+          <feTurbulence type="fractalNoise" baseFrequency="0.01 0.02" numOctaves="2" result="noise">
+             <animate attributeName="baseFrequency" values="0.01 0.02;0.02 0.04;0.01 0.02" dur="3s" repeatCount="indefinite" />
+          </feTurbulence>
+          <feDisplacementMap in="SourceGraphic" in2="noise" scale="4" />
+        </filter>
+      </svg>
+
       <div className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden perspective-[1000px] px-6">
         
         {/* Dynamic Glowing Background (Optimized) */}
@@ -87,24 +97,32 @@ export default function ProductDetailsScroller({ selected }: { selected: number 
         >
           <motion.div 
              whileHover={{ scale: 1.02, rotateY: -3, rotateX: 3 }}
-             className="group bg-black/40 backdrop-blur-2xl border border-white/5 p-8 md:p-12 rounded-[2rem] shadow-[0_20px_50px_rgba(0,0,0,0.8)] inline-block w-full max-w-[500px] mx-auto lg:ml-auto block transition-colors hover:bg-black/60 cursor-pointer overflow-hidden"
+             className="group relative rounded-[2rem] p-[2px] shadow-[0_20px_50px_rgba(0,0,0,0.8)] inline-block w-full max-w-[500px] mx-auto lg:ml-auto block transition-colors cursor-none overflow-hidden"
           >
-            {/* Animated hover gradient border effect */}
-            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none rounded-[2rem]" style={{ background: `radial-gradient(circle at top right, ${product.color}30, transparent 60%)` }} />
-            
-            <h2 className="text-4xl md:text-5xl font-bold font-sans tracking-tight mb-4 relative z-10" style={{ color: product.color }}>
-              Ultimate Protection
-            </h2>
-            <p className="text-gray-300 text-base md:text-lg leading-relaxed mb-6 font-light relative z-10">
-               Experience industrial-grade reliability with our next-gen solution. Engineered to thrive in the harshest conditions, ensuring you never have to worry about sudden punctures again.
-            </p>
-            <div className="space-y-4 text-left relative z-10">
-              {product.features.slice(0, 3).map((f, i) => (
-                 <div key={i} className="flex gap-4 items-center bg-white/5 group-hover:bg-white/10 border border-white/5 p-4 rounded-2xl transition-colors">
-                   <div className="w-3 h-3 rounded-full flex-shrink-0 shadow-lg" style={{ backgroundColor: product.color, boxShadow: `0 0 15px ${product.color}` }} />
-                   <p className="text-white font-medium text-base">{f}</p>
-                 </div>
-              ))}
+            {/* ELECTRIC ANIMATED BORDERS */}
+            <div className="absolute inset-[-50%] group-hover:scale-110 opacity-60 group-hover:opacity-100 transition-all duration-700 animate-[spin_3s_linear_infinite]" 
+                 style={{ background: `conic-gradient(from 0deg, transparent 60%, var(--product-color))`, filter: 'url(#electricity) blur(1px)' }} />
+            <div className="absolute inset-[-50%] group-hover:scale-110 opacity-30 group-hover:opacity-80 transition-all duration-700 animate-[spin_5s_linear_infinite_reverse]" 
+                 style={{ background: `conic-gradient(from 180deg, transparent 60%, var(--product-color))`, filter: 'url(#electricity) blur(2px)' }} />
+
+            <div className="relative z-10 bg-black/80 group-hover:bg-black/40 backdrop-blur-3xl p-8 md:p-12 rounded-[calc(2rem-2px)] w-full h-full transition-colors overflow-hidden">
+                {/* Animated hover gradient border effect */}
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none rounded-[2rem]" style={{ background: `radial-gradient(circle at top right, ${product.color}30, transparent 60%)` }} />
+                
+                <h2 className="text-4xl md:text-5xl font-bold font-sans tracking-tight mb-4 relative z-10" style={{ color: product.color }}>
+                  Ultimate Protection
+                </h2>
+                <p className="text-gray-300 text-base md:text-lg leading-relaxed mb-6 font-light relative z-10">
+                   Experience industrial-grade reliability with our next-gen solution. Engineered to thrive in the harshest conditions, ensuring you never have to worry about sudden punctures again.
+                </p>
+                <div className="space-y-4 text-left relative z-10">
+                  {product.features.slice(0, 3).map((f, i) => (
+                     <div key={i} className="flex gap-4 items-center bg-white/5 group-hover:bg-white/10 border border-white/5 p-4 rounded-2xl transition-colors">
+                       <div className="w-3 h-3 rounded-full flex-shrink-0 shadow-lg" style={{ backgroundColor: product.color, boxShadow: `0 0 15px ${product.color}` }} />
+                       <p className="text-white font-medium text-base">{f}</p>
+                     </div>
+                  ))}
+                </div>
             </div>
           </motion.div>
         </motion.div>
@@ -116,21 +134,29 @@ export default function ProductDetailsScroller({ selected }: { selected: number 
         >
           <motion.div 
              whileHover={{ scale: 1.02, rotateY: 3, rotateX: 3 }}
-             className="group bg-black/40 backdrop-blur-2xl border border-white/5 p-8 md:p-12 rounded-[2rem] shadow-[0_20px_50px_rgba(0,0,0,0.8)] inline-block w-full max-w-[500px] mx-auto block lg:mr-auto block transition-colors hover:bg-black/60 cursor-pointer overflow-hidden"
+             className="group relative rounded-[2rem] p-[2px] shadow-[0_20px_50px_rgba(0,0,0,0.8)] inline-block w-full max-w-[500px] mx-auto block lg:mr-auto block transition-colors cursor-none overflow-hidden"
           >
-            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none rounded-[2rem]" style={{ background: `radial-gradient(circle at top left, ${product.color}30, transparent 60%)` }} />
-            
-            <h2 className="text-4xl md:text-5xl font-bold font-sans tracking-tight mb-6 text-white relative z-10 group-hover:translate-x-2 transition-transform duration-300" style={{ textShadow: `0 0 30px ${product.color}80` }}>
-              Advanced Formula
-            </h2>
-            <div className="space-y-6 relative z-10">
-                <p className="text-gray-300 text-base md:text-lg leading-relaxed font-light">
-                  Our microscopic smart-fibers and advanced polymers rush to any puncture site instantly, effectively sealing it from the inside without requiring you to stop or fix it.
-                </p>
-                <div className="w-16 h-[2px] rounded-full group-hover:w-full transition-all duration-700" style={{ backgroundColor: product.color }} />
-                <p className="text-gray-400 text-sm md:text-base leading-relaxed group-hover:text-gray-200 transition-colors">
-                  Crafted for extreme performance. Once injected, it proactively coats the inside of your tires, maintaining dynamic balancing and instantly sealing deep punctures on the go without you even noticing.
-                </p>
+            {/* ELECTRIC ANIMATED BORDERS */}
+            <div className="absolute inset-[-50%] group-hover:scale-110 opacity-60 group-hover:opacity-100 transition-all duration-700 animate-[spin_3s_linear_infinite]" 
+                 style={{ background: `conic-gradient(from 0deg, transparent 60%, var(--product-color))`, filter: 'url(#electricity) blur(1px)' }} />
+            <div className="absolute inset-[-50%] group-hover:scale-110 opacity-30 group-hover:opacity-80 transition-all duration-700 animate-[spin_5s_linear_infinite_reverse]" 
+                 style={{ background: `conic-gradient(from 180deg, transparent 60%, var(--product-color))`, filter: 'url(#electricity) blur(2px)' }} />
+
+            <div className="relative z-10 bg-black/80 group-hover:bg-black/40 backdrop-blur-3xl p-8 md:p-12 rounded-[calc(2rem-2px)] w-full h-full transition-colors overflow-hidden">
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none rounded-[2rem]" style={{ background: `radial-gradient(circle at top left, ${product.color}30, transparent 60%)` }} />
+                
+                <h2 className="text-4xl md:text-5xl font-bold font-sans tracking-tight mb-6 text-white relative z-10 group-hover:translate-x-2 transition-transform duration-300" style={{ textShadow: `0 0 30px ${product.color}80` }}>
+                  Advanced Formula
+                </h2>
+                <div className="space-y-6 relative z-10">
+                    <p className="text-gray-300 text-base md:text-lg leading-relaxed font-light">
+                      Our microscopic smart-fibers and advanced polymers rush to any puncture site instantly, effectively sealing it from the inside without requiring you to stop or fix it.
+                    </p>
+                    <div className="w-16 h-[2px] rounded-full group-hover:w-full transition-all duration-700" style={{ backgroundColor: product.color }} />
+                    <p className="text-gray-400 text-sm md:text-base leading-relaxed group-hover:text-gray-200 transition-colors">
+                      Crafted for extreme performance. Once injected, it proactively coats the inside of your tires, maintaining dynamic balancing and instantly sealing deep punctures on the go without you even noticing.
+                    </p>
+                </div>
             </div>
           </motion.div>
         </motion.div>
@@ -142,29 +168,37 @@ export default function ProductDetailsScroller({ selected }: { selected: number 
         >
            <motion.div 
               whileHover={{ scale: 1.02, rotateY: -3, rotateX: 3 }}
-              className="group bg-black/40 backdrop-blur-2xl border border-white/5 p-8 md:p-12 rounded-[2rem] shadow-[0_20px_50px_rgba(0,0,0,0.8)] inline-block w-full max-w-[500px] mx-auto block lg:ml-auto block transition-colors hover:bg-black/60 cursor-pointer overflow-hidden"
+              className="group relative rounded-[2rem] p-[2px] shadow-[0_20px_50px_rgba(0,0,0,0.8)] inline-block w-full max-w-[500px] mx-auto block lg:ml-auto block transition-colors cursor-none overflow-hidden"
            >
-            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none rounded-[2rem]" style={{ background: `radial-gradient(circle at bottom right, ${product.color}30, transparent 60%)` }} />
-            
-            <h2 className="text-4xl md:text-5xl font-bold font-sans tracking-tight mb-6 text-white relative z-10">
-              Why It's <span style={{ color: product.color }} className="drop-shadow-lg">Different</span>
-            </h2>
-            <p className="text-gray-300 text-base md:text-lg leading-relaxed mb-8 font-light relative z-10">
-              Unlike generic sealants, our non-toxic, eco-friendly gel does not degrade or cause rim corrosion over time. It cleans easily with water and extends the lifespan of your tyres indefinitely.
-            </p>
+            {/* ELECTRIC ANIMATED BORDERS */}
+            <div className="absolute inset-[-50%] group-hover:scale-110 opacity-60 group-hover:opacity-100 transition-all duration-700 animate-[spin_3s_linear_infinite]" 
+                 style={{ background: `conic-gradient(from 0deg, transparent 60%, var(--product-color))`, filter: 'url(#electricity) blur(1px)' }} />
+            <div className="absolute inset-[-50%] group-hover:scale-110 opacity-30 group-hover:opacity-80 transition-all duration-700 animate-[spin_5s_linear_infinite_reverse]" 
+                 style={{ background: `conic-gradient(from 180deg, transparent 60%, var(--product-color))`, filter: 'url(#electricity) blur(2px)' }} />
 
-            <div className="flex flex-col gap-5 bg-white/5 group-hover:bg-white/10 p-6 rounded-2xl border border-white/5 transition-colors relative z-10">
-              <div className="flex items-center justify-between">
-                  <span className="text-gray-400 uppercase tracking-widest text-xs font-bold group-hover:text-white transition-colors">Volume Delivered</span>
-                  <span className="font-bold text-lg py-1 px-4 rounded-full shadow-xl transition-transform group-hover:scale-110" style={{ backgroundColor: product.color, color: '#000', boxShadow: `0 5px 20px ${product.color}50` }}>
-                      {product.volume}
-                  </span>
-              </div>
-              <div className="w-full h-[1px] bg-white/10 group-hover:bg-white/30 transition-colors" />
-              <div className="flex items-center justify-between">
-                  <span className="text-gray-400 uppercase tracking-widest text-xs font-bold group-hover:text-white transition-colors">Category Class</span>
-                  <span className="text-white font-bold opacity-90 text-sm">{product.tagline}</span>
-              </div>
+            <div className="relative z-10 bg-black/80 group-hover:bg-black/40 backdrop-blur-3xl p-8 md:p-12 rounded-[calc(2rem-2px)] w-full h-full transition-colors overflow-hidden">
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none rounded-[2rem]" style={{ background: `radial-gradient(circle at bottom right, ${product.color}30, transparent 60%)` }} />
+                
+                <h2 className="text-4xl md:text-5xl font-bold font-sans tracking-tight mb-6 text-white relative z-10">
+                  Why It's <span style={{ color: product.color }} className="drop-shadow-lg">Different</span>
+                </h2>
+                <p className="text-gray-300 text-base md:text-lg leading-relaxed mb-8 font-light relative z-10">
+                  Unlike generic sealants, our non-toxic, eco-friendly gel does not degrade or cause rim corrosion over time. It cleans easily with water and extends the lifespan of your tyres indefinitely.
+                </p>
+
+                <div className="flex flex-col gap-5 bg-white/5 group-hover:bg-white/10 p-6 rounded-2xl border border-white/5 transition-colors relative z-10">
+                  <div className="flex items-center justify-between">
+                      <span className="text-gray-400 uppercase tracking-widest text-xs font-bold group-hover:text-white transition-colors">Volume Delivered</span>
+                      <span className="font-bold text-lg py-1 px-4 rounded-full shadow-xl transition-transform group-hover:scale-110" style={{ backgroundColor: product.color, color: '#000', boxShadow: `0 5px 20px ${product.color}50` }}>
+                          {product.volume}
+                      </span>
+                  </div>
+                  <div className="w-full h-[1px] bg-white/10 group-hover:bg-white/30 transition-colors" />
+                  <div className="flex items-center justify-between">
+                      <span className="text-gray-400 uppercase tracking-widest text-xs font-bold group-hover:text-white transition-colors">Category Class</span>
+                      <span className="text-white font-bold opacity-90 text-sm">{product.tagline}</span>
+                  </div>
+                </div>
             </div>
           </motion.div>
         </motion.div>

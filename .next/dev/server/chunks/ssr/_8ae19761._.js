@@ -632,397 +632,537 @@ function ProductDetailsScroller({ selected }) {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         ref: ref,
         className: "relative w-full h-[600vh] bg-[#050505]",
-        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-            className: "sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden perspective-[1000px] px-6",
-            children: [
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
-                    className: "absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[100vw] md:w-[50vw] h-[100vw] md:h-[50vw] rounded-full opacity-20 pointer-events-none",
-                    style: {
-                        backgroundColor: product.color,
-                        filter: 'blur(80px)'
-                    },
-                    animate: {
-                        scale: [
-                            1,
-                            1.2,
-                            1
-                        ],
-                        opacity: [
-                            0.1,
-                            0.2,
-                            0.1
-                        ]
-                    },
-                    transition: {
-                        duration: 6,
-                        repeat: Infinity,
-                        ease: "easeInOut"
-                    }
-                }, void 0, false, {
-                    fileName: "[project]/components/ProductDetailsScroller.tsx",
-                    lineNumber: 76,
-                    columnNumber: 9
-                }, this),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
-                    className: "absolute z-20 w-full lg:w-[40%] right-0 lg:right-[5%] bottom-10 lg:bottom-auto lg:top-1/2 lg:-translate-y-1/2 pointer-events-auto",
-                    style: {
-                        opacity: t1O,
-                        y: t1Y,
-                        scale: t1Scale
-                    },
-                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
-                        whileHover: {
-                            scale: 1.02,
-                            rotateY: -3,
-                            rotateX: 3
-                        },
-                        className: "group bg-black/40 backdrop-blur-2xl border border-white/5 p-8 md:p-12 rounded-[2rem] shadow-[0_20px_50px_rgba(0,0,0,0.8)] inline-block w-full max-w-[500px] mx-auto lg:ml-auto block transition-colors hover:bg-black/60 cursor-pointer overflow-hidden",
-                        children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none rounded-[2rem]",
-                                style: {
-                                    background: `radial-gradient(circle at top right, ${product.color}30, transparent 60%)`
-                                }
+        children: [
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
+                className: "absolute pointer-events-none w-0 h-0 hidden",
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("filter", {
+                    id: "electricity",
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("feTurbulence", {
+                            type: "fractalNoise",
+                            baseFrequency: "0.01 0.02",
+                            numOctaves: "2",
+                            result: "noise",
+                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("animate", {
+                                attributeName: "baseFrequency",
+                                values: "0.01 0.02;0.02 0.04;0.01 0.02",
+                                dur: "3s",
+                                repeatCount: "indefinite"
                             }, void 0, false, {
                                 fileName: "[project]/components/ProductDetailsScroller.tsx",
-                                lineNumber: 93,
-                                columnNumber: 13
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                                className: "text-4xl md:text-5xl font-bold font-sans tracking-tight mb-4 relative z-10",
-                                style: {
-                                    color: product.color
-                                },
-                                children: "Ultimate Protection"
-                            }, void 0, false, {
-                                fileName: "[project]/components/ProductDetailsScroller.tsx",
-                                lineNumber: 95,
-                                columnNumber: 13
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                className: "text-gray-300 text-base md:text-lg leading-relaxed mb-6 font-light relative z-10",
-                                children: "Experience industrial-grade reliability with our next-gen solution. Engineered to thrive in the harshest conditions, ensuring you never have to worry about sudden punctures again."
-                            }, void 0, false, {
-                                fileName: "[project]/components/ProductDetailsScroller.tsx",
-                                lineNumber: 98,
-                                columnNumber: 13
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "space-y-4 text-left relative z-10",
-                                children: product.features.slice(0, 3).map((f, i)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "flex gap-4 items-center bg-white/5 group-hover:bg-white/10 border border-white/5 p-4 rounded-2xl transition-colors",
-                                        children: [
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "w-3 h-3 rounded-full flex-shrink-0 shadow-lg",
-                                                style: {
-                                                    backgroundColor: product.color,
-                                                    boxShadow: `0 0 15px ${product.color}`
-                                                }
-                                            }, void 0, false, {
-                                                fileName: "[project]/components/ProductDetailsScroller.tsx",
-                                                lineNumber: 104,
-                                                columnNumber: 20
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                className: "text-white font-medium text-base",
-                                                children: f
-                                            }, void 0, false, {
-                                                fileName: "[project]/components/ProductDetailsScroller.tsx",
-                                                lineNumber: 105,
-                                                columnNumber: 20
-                                            }, this)
-                                        ]
-                                    }, i, true, {
-                                        fileName: "[project]/components/ProductDetailsScroller.tsx",
-                                        lineNumber: 103,
-                                        columnNumber: 18
-                                    }, this))
-                            }, void 0, false, {
-                                fileName: "[project]/components/ProductDetailsScroller.tsx",
-                                lineNumber: 101,
-                                columnNumber: 13
+                                lineNumber: 77,
+                                columnNumber: 14
                             }, this)
-                        ]
-                    }, void 0, true, {
-                        fileName: "[project]/components/ProductDetailsScroller.tsx",
-                        lineNumber: 88,
-                        columnNumber: 11
-                    }, this)
-                }, void 0, false, {
+                        }, void 0, false, {
+                            fileName: "[project]/components/ProductDetailsScroller.tsx",
+                            lineNumber: 76,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("feDisplacementMap", {
+                            in: "SourceGraphic",
+                            in2: "noise",
+                            scale: "4"
+                        }, void 0, false, {
+                            fileName: "[project]/components/ProductDetailsScroller.tsx",
+                            lineNumber: 79,
+                            columnNumber: 11
+                        }, this)
+                    ]
+                }, void 0, true, {
                     fileName: "[project]/components/ProductDetailsScroller.tsx",
-                    lineNumber: 84,
+                    lineNumber: 75,
                     columnNumber: 9
-                }, this),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
-                    className: "absolute z-20 w-full lg:w-[40%] left-0 lg:left-[5%] bottom-10 lg:bottom-auto lg:top-1/2 lg:-translate-y-1/2 pointer-events-auto",
-                    style: {
-                        opacity: t2O,
-                        y: t2Y,
-                        scale: t2Scale
-                    },
-                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
-                        whileHover: {
-                            scale: 1.02,
-                            rotateY: 3,
-                            rotateX: 3
+                }, this)
+            }, void 0, false, {
+                fileName: "[project]/components/ProductDetailsScroller.tsx",
+                lineNumber: 74,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden perspective-[1000px] px-6",
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
+                        className: "absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[100vw] md:w-[50vw] h-[100vw] md:h-[50vw] rounded-full opacity-20 pointer-events-none",
+                        style: {
+                            backgroundColor: product.color,
+                            filter: 'blur(80px)'
                         },
-                        className: "group bg-black/40 backdrop-blur-2xl border border-white/5 p-8 md:p-12 rounded-[2rem] shadow-[0_20px_50px_rgba(0,0,0,0.8)] inline-block w-full max-w-[500px] mx-auto block lg:mr-auto block transition-colors hover:bg-black/60 cursor-pointer overflow-hidden",
-                        children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none rounded-[2rem]",
-                                style: {
-                                    background: `radial-gradient(circle at top left, ${product.color}30, transparent 60%)`
-                                }
-                            }, void 0, false, {
-                                fileName: "[project]/components/ProductDetailsScroller.tsx",
-                                lineNumber: 121,
-                                columnNumber: 13
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                                className: "text-4xl md:text-5xl font-bold font-sans tracking-tight mb-6 text-white relative z-10 group-hover:translate-x-2 transition-transform duration-300",
-                                style: {
-                                    textShadow: `0 0 30px ${product.color}80`
-                                },
-                                children: "Advanced Formula"
-                            }, void 0, false, {
-                                fileName: "[project]/components/ProductDetailsScroller.tsx",
-                                lineNumber: 123,
-                                columnNumber: 13
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "space-y-6 relative z-10",
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                        className: "text-gray-300 text-base md:text-lg leading-relaxed font-light",
-                                        children: "Our microscopic smart-fibers and advanced polymers rush to any puncture site instantly, effectively sealing it from the inside without requiring you to stop or fix it."
-                                    }, void 0, false, {
-                                        fileName: "[project]/components/ProductDetailsScroller.tsx",
-                                        lineNumber: 127,
-                                        columnNumber: 17
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "w-16 h-[2px] rounded-full group-hover:w-full transition-all duration-700",
-                                        style: {
-                                            backgroundColor: product.color
-                                        }
-                                    }, void 0, false, {
-                                        fileName: "[project]/components/ProductDetailsScroller.tsx",
-                                        lineNumber: 130,
-                                        columnNumber: 17
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                        className: "text-gray-400 text-sm md:text-base leading-relaxed group-hover:text-gray-200 transition-colors",
-                                        children: "Crafted for extreme performance. Once injected, it proactively coats the inside of your tires, maintaining dynamic balancing and instantly sealing deep punctures on the go without you even noticing."
-                                    }, void 0, false, {
-                                        fileName: "[project]/components/ProductDetailsScroller.tsx",
-                                        lineNumber: 131,
-                                        columnNumber: 17
-                                    }, this)
-                                ]
-                            }, void 0, true, {
-                                fileName: "[project]/components/ProductDetailsScroller.tsx",
-                                lineNumber: 126,
-                                columnNumber: 13
-                            }, this)
-                        ]
-                    }, void 0, true, {
-                        fileName: "[project]/components/ProductDetailsScroller.tsx",
-                        lineNumber: 117,
-                        columnNumber: 11
-                    }, this)
-                }, void 0, false, {
-                    fileName: "[project]/components/ProductDetailsScroller.tsx",
-                    lineNumber: 113,
-                    columnNumber: 9
-                }, this),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
-                    className: "absolute z-20 w-full lg:w-[40%] right-0 lg:right-[5%] bottom-10 lg:bottom-auto lg:top-1/2 lg:-translate-y-1/2 pointer-events-auto",
-                    style: {
-                        opacity: t3O,
-                        y: t3Y,
-                        scale: t3Scale
-                    },
-                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
-                        whileHover: {
-                            scale: 1.02,
-                            rotateY: -3,
-                            rotateX: 3
-                        },
-                        className: "group bg-black/40 backdrop-blur-2xl border border-white/5 p-8 md:p-12 rounded-[2rem] shadow-[0_20px_50px_rgba(0,0,0,0.8)] inline-block w-full max-w-[500px] mx-auto block lg:ml-auto block transition-colors hover:bg-black/60 cursor-pointer overflow-hidden",
-                        children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none rounded-[2rem]",
-                                style: {
-                                    background: `radial-gradient(circle at bottom right, ${product.color}30, transparent 60%)`
-                                }
-                            }, void 0, false, {
-                                fileName: "[project]/components/ProductDetailsScroller.tsx",
-                                lineNumber: 147,
-                                columnNumber: 13
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                                className: "text-4xl md:text-5xl font-bold font-sans tracking-tight mb-6 text-white relative z-10",
-                                children: [
-                                    "Why It's ",
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                        style: {
-                                            color: product.color
-                                        },
-                                        className: "drop-shadow-lg",
-                                        children: "Different"
-                                    }, void 0, false, {
-                                        fileName: "[project]/components/ProductDetailsScroller.tsx",
-                                        lineNumber: 150,
-                                        columnNumber: 24
-                                    }, this)
-                                ]
-                            }, void 0, true, {
-                                fileName: "[project]/components/ProductDetailsScroller.tsx",
-                                lineNumber: 149,
-                                columnNumber: 13
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                className: "text-gray-300 text-base md:text-lg leading-relaxed mb-8 font-light relative z-10",
-                                children: "Unlike generic sealants, our non-toxic, eco-friendly gel does not degrade or cause rim corrosion over time. It cleans easily with water and extends the lifespan of your tyres indefinitely."
-                            }, void 0, false, {
-                                fileName: "[project]/components/ProductDetailsScroller.tsx",
-                                lineNumber: 152,
-                                columnNumber: 13
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "flex flex-col gap-5 bg-white/5 group-hover:bg-white/10 p-6 rounded-2xl border border-white/5 transition-colors relative z-10",
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "flex items-center justify-between",
-                                        children: [
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                className: "text-gray-400 uppercase tracking-widest text-xs font-bold group-hover:text-white transition-colors",
-                                                children: "Volume Delivered"
-                                            }, void 0, false, {
-                                                fileName: "[project]/components/ProductDetailsScroller.tsx",
-                                                lineNumber: 158,
-                                                columnNumber: 19
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                className: "font-bold text-lg py-1 px-4 rounded-full shadow-xl transition-transform group-hover:scale-110",
-                                                style: {
-                                                    backgroundColor: product.color,
-                                                    color: '#000',
-                                                    boxShadow: `0 5px 20px ${product.color}50`
-                                                },
-                                                children: product.volume
-                                            }, void 0, false, {
-                                                fileName: "[project]/components/ProductDetailsScroller.tsx",
-                                                lineNumber: 159,
-                                                columnNumber: 19
-                                            }, this)
-                                        ]
-                                    }, void 0, true, {
-                                        fileName: "[project]/components/ProductDetailsScroller.tsx",
-                                        lineNumber: 157,
-                                        columnNumber: 15
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "w-full h-[1px] bg-white/10 group-hover:bg-white/30 transition-colors"
-                                    }, void 0, false, {
-                                        fileName: "[project]/components/ProductDetailsScroller.tsx",
-                                        lineNumber: 163,
-                                        columnNumber: 15
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "flex items-center justify-between",
-                                        children: [
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                className: "text-gray-400 uppercase tracking-widest text-xs font-bold group-hover:text-white transition-colors",
-                                                children: "Category Class"
-                                            }, void 0, false, {
-                                                fileName: "[project]/components/ProductDetailsScroller.tsx",
-                                                lineNumber: 165,
-                                                columnNumber: 19
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                className: "text-white font-bold opacity-90 text-sm",
-                                                children: product.tagline
-                                            }, void 0, false, {
-                                                fileName: "[project]/components/ProductDetailsScroller.tsx",
-                                                lineNumber: 166,
-                                                columnNumber: 19
-                                            }, this)
-                                        ]
-                                    }, void 0, true, {
-                                        fileName: "[project]/components/ProductDetailsScroller.tsx",
-                                        lineNumber: 164,
-                                        columnNumber: 15
-                                    }, this)
-                                ]
-                            }, void 0, true, {
-                                fileName: "[project]/components/ProductDetailsScroller.tsx",
-                                lineNumber: 156,
-                                columnNumber: 13
-                            }, this)
-                        ]
-                    }, void 0, true, {
-                        fileName: "[project]/components/ProductDetailsScroller.tsx",
-                        lineNumber: 143,
-                        columnNumber: 12
-                    }, this)
-                }, void 0, false, {
-                    fileName: "[project]/components/ProductDetailsScroller.tsx",
-                    lineNumber: 139,
-                    columnNumber: 9
-                }, this),
-                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
-                    className: "relative z-10 w-[80vw] md:w-[35vw] h-[60vh] md:h-[70vh] flex items-center justify-center transform-style-3d pointer-events-none",
-                    style: {
-                        scale: bottleScale,
-                        x: bottleX,
-                        y: bottleY,
-                        rotateY: bottleRotateY,
-                        rotateZ: bottleRotateZ
-                    },
-                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
-                        className: "w-full h-full relative",
                         animate: {
-                            y: [
-                                0,
-                                -20,
-                                0
+                            scale: [
+                                1,
+                                1.2,
+                                1
+                            ],
+                            opacity: [
+                                0.1,
+                                0.2,
+                                0.1
                             ]
                         },
                         transition: {
+                            duration: 6,
                             repeat: Infinity,
-                            duration: 5,
                             ease: "easeInOut"
+                        }
+                    }, void 0, false, {
+                        fileName: "[project]/components/ProductDetailsScroller.tsx",
+                        lineNumber: 86,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
+                        className: "absolute z-20 w-full lg:w-[40%] right-0 lg:right-[5%] bottom-10 lg:bottom-auto lg:top-1/2 lg:-translate-y-1/2 pointer-events-auto",
+                        style: {
+                            opacity: t1O,
+                            y: t1Y,
+                            scale: t1Scale
                         },
-                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
-                            src: product.image,
-                            alt: product.name,
-                            className: "w-full h-full object-contain",
-                            style: {
-                                filter: `drop-shadow(0 20px 30px ${product.color}40) drop-shadow(0 0 10px rgba(0,0,0,0.5))`
-                            }
-                        }, void 0, false, {
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
+                            whileHover: {
+                                scale: 1.02,
+                                rotateY: -3,
+                                rotateX: 3
+                            },
+                            className: "group relative rounded-[2rem] p-[2px] shadow-[0_20px_50px_rgba(0,0,0,0.8)] inline-block w-full max-w-[500px] mx-auto lg:ml-auto block transition-colors cursor-none overflow-hidden",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "absolute inset-[-50%] group-hover:scale-110 opacity-60 group-hover:opacity-100 transition-all duration-700 animate-[spin_3s_linear_infinite]",
+                                    style: {
+                                        background: `conic-gradient(from 0deg, transparent 60%, var(--product-color))`,
+                                        filter: 'url(#electricity) blur(1px)'
+                                    }
+                                }, void 0, false, {
+                                    fileName: "[project]/components/ProductDetailsScroller.tsx",
+                                    lineNumber: 103,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "absolute inset-[-50%] group-hover:scale-110 opacity-30 group-hover:opacity-80 transition-all duration-700 animate-[spin_5s_linear_infinite_reverse]",
+                                    style: {
+                                        background: `conic-gradient(from 180deg, transparent 60%, var(--product-color))`,
+                                        filter: 'url(#electricity) blur(2px)'
+                                    }
+                                }, void 0, false, {
+                                    fileName: "[project]/components/ProductDetailsScroller.tsx",
+                                    lineNumber: 105,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "relative z-10 bg-black/80 group-hover:bg-black/40 backdrop-blur-3xl p-8 md:p-12 rounded-[calc(2rem-2px)] w-full h-full transition-colors overflow-hidden",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none rounded-[2rem]",
+                                            style: {
+                                                background: `radial-gradient(circle at top right, ${product.color}30, transparent 60%)`
+                                            }
+                                        }, void 0, false, {
+                                            fileName: "[project]/components/ProductDetailsScroller.tsx",
+                                            lineNumber: 110,
+                                            columnNumber: 17
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
+                                            className: "text-4xl md:text-5xl font-bold font-sans tracking-tight mb-4 relative z-10",
+                                            style: {
+                                                color: product.color
+                                            },
+                                            children: "Ultimate Protection"
+                                        }, void 0, false, {
+                                            fileName: "[project]/components/ProductDetailsScroller.tsx",
+                                            lineNumber: 112,
+                                            columnNumber: 17
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                            className: "text-gray-300 text-base md:text-lg leading-relaxed mb-6 font-light relative z-10",
+                                            children: "Experience industrial-grade reliability with our next-gen solution. Engineered to thrive in the harshest conditions, ensuring you never have to worry about sudden punctures again."
+                                        }, void 0, false, {
+                                            fileName: "[project]/components/ProductDetailsScroller.tsx",
+                                            lineNumber: 115,
+                                            columnNumber: 17
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "space-y-4 text-left relative z-10",
+                                            children: product.features.slice(0, 3).map((f, i)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    className: "flex gap-4 items-center bg-white/5 group-hover:bg-white/10 border border-white/5 p-4 rounded-2xl transition-colors",
+                                                    children: [
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                            className: "w-3 h-3 rounded-full flex-shrink-0 shadow-lg",
+                                                            style: {
+                                                                backgroundColor: product.color,
+                                                                boxShadow: `0 0 15px ${product.color}`
+                                                            }
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/components/ProductDetailsScroller.tsx",
+                                                            lineNumber: 121,
+                                                            columnNumber: 24
+                                                        }, this),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                            className: "text-white font-medium text-base",
+                                                            children: f
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/components/ProductDetailsScroller.tsx",
+                                                            lineNumber: 122,
+                                                            columnNumber: 24
+                                                        }, this)
+                                                    ]
+                                                }, i, true, {
+                                                    fileName: "[project]/components/ProductDetailsScroller.tsx",
+                                                    lineNumber: 120,
+                                                    columnNumber: 22
+                                                }, this))
+                                        }, void 0, false, {
+                                            fileName: "[project]/components/ProductDetailsScroller.tsx",
+                                            lineNumber: 118,
+                                            columnNumber: 17
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/components/ProductDetailsScroller.tsx",
+                                    lineNumber: 108,
+                                    columnNumber: 13
+                                }, this)
+                            ]
+                        }, void 0, true, {
                             fileName: "[project]/components/ProductDetailsScroller.tsx",
-                            lineNumber: 189,
-                            columnNumber: 15
+                            lineNumber: 98,
+                            columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/components/ProductDetailsScroller.tsx",
-                        lineNumber: 184,
-                        columnNumber: 13
+                        lineNumber: 94,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
+                        className: "absolute z-20 w-full lg:w-[40%] left-0 lg:left-[5%] bottom-10 lg:bottom-auto lg:top-1/2 lg:-translate-y-1/2 pointer-events-auto",
+                        style: {
+                            opacity: t2O,
+                            y: t2Y,
+                            scale: t2Scale
+                        },
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
+                            whileHover: {
+                                scale: 1.02,
+                                rotateY: 3,
+                                rotateX: 3
+                            },
+                            className: "group relative rounded-[2rem] p-[2px] shadow-[0_20px_50px_rgba(0,0,0,0.8)] inline-block w-full max-w-[500px] mx-auto block lg:mr-auto block transition-colors cursor-none overflow-hidden",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "absolute inset-[-50%] group-hover:scale-110 opacity-60 group-hover:opacity-100 transition-all duration-700 animate-[spin_3s_linear_infinite]",
+                                    style: {
+                                        background: `conic-gradient(from 0deg, transparent 60%, var(--product-color))`,
+                                        filter: 'url(#electricity) blur(1px)'
+                                    }
+                                }, void 0, false, {
+                                    fileName: "[project]/components/ProductDetailsScroller.tsx",
+                                    lineNumber: 140,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "absolute inset-[-50%] group-hover:scale-110 opacity-30 group-hover:opacity-80 transition-all duration-700 animate-[spin_5s_linear_infinite_reverse]",
+                                    style: {
+                                        background: `conic-gradient(from 180deg, transparent 60%, var(--product-color))`,
+                                        filter: 'url(#electricity) blur(2px)'
+                                    }
+                                }, void 0, false, {
+                                    fileName: "[project]/components/ProductDetailsScroller.tsx",
+                                    lineNumber: 142,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "relative z-10 bg-black/80 group-hover:bg-black/40 backdrop-blur-3xl p-8 md:p-12 rounded-[calc(2rem-2px)] w-full h-full transition-colors overflow-hidden",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none rounded-[2rem]",
+                                            style: {
+                                                background: `radial-gradient(circle at top left, ${product.color}30, transparent 60%)`
+                                            }
+                                        }, void 0, false, {
+                                            fileName: "[project]/components/ProductDetailsScroller.tsx",
+                                            lineNumber: 146,
+                                            columnNumber: 17
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
+                                            className: "text-4xl md:text-5xl font-bold font-sans tracking-tight mb-6 text-white relative z-10 group-hover:translate-x-2 transition-transform duration-300",
+                                            style: {
+                                                textShadow: `0 0 30px ${product.color}80`
+                                            },
+                                            children: "Advanced Formula"
+                                        }, void 0, false, {
+                                            fileName: "[project]/components/ProductDetailsScroller.tsx",
+                                            lineNumber: 148,
+                                            columnNumber: 17
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "space-y-6 relative z-10",
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                    className: "text-gray-300 text-base md:text-lg leading-relaxed font-light",
+                                                    children: "Our microscopic smart-fibers and advanced polymers rush to any puncture site instantly, effectively sealing it from the inside without requiring you to stop or fix it."
+                                                }, void 0, false, {
+                                                    fileName: "[project]/components/ProductDetailsScroller.tsx",
+                                                    lineNumber: 152,
+                                                    columnNumber: 21
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    className: "w-16 h-[2px] rounded-full group-hover:w-full transition-all duration-700",
+                                                    style: {
+                                                        backgroundColor: product.color
+                                                    }
+                                                }, void 0, false, {
+                                                    fileName: "[project]/components/ProductDetailsScroller.tsx",
+                                                    lineNumber: 155,
+                                                    columnNumber: 21
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                    className: "text-gray-400 text-sm md:text-base leading-relaxed group-hover:text-gray-200 transition-colors",
+                                                    children: "Crafted for extreme performance. Once injected, it proactively coats the inside of your tires, maintaining dynamic balancing and instantly sealing deep punctures on the go without you even noticing."
+                                                }, void 0, false, {
+                                                    fileName: "[project]/components/ProductDetailsScroller.tsx",
+                                                    lineNumber: 156,
+                                                    columnNumber: 21
+                                                }, this)
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/components/ProductDetailsScroller.tsx",
+                                            lineNumber: 151,
+                                            columnNumber: 17
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/components/ProductDetailsScroller.tsx",
+                                    lineNumber: 145,
+                                    columnNumber: 13
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/components/ProductDetailsScroller.tsx",
+                            lineNumber: 135,
+                            columnNumber: 11
+                        }, this)
+                    }, void 0, false, {
+                        fileName: "[project]/components/ProductDetailsScroller.tsx",
+                        lineNumber: 131,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
+                        className: "absolute z-20 w-full lg:w-[40%] right-0 lg:right-[5%] bottom-10 lg:bottom-auto lg:top-1/2 lg:-translate-y-1/2 pointer-events-auto",
+                        style: {
+                            opacity: t3O,
+                            y: t3Y,
+                            scale: t3Scale
+                        },
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
+                            whileHover: {
+                                scale: 1.02,
+                                rotateY: -3,
+                                rotateX: 3
+                            },
+                            className: "group relative rounded-[2rem] p-[2px] shadow-[0_20px_50px_rgba(0,0,0,0.8)] inline-block w-full max-w-[500px] mx-auto block lg:ml-auto block transition-colors cursor-none overflow-hidden",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "absolute inset-[-50%] group-hover:scale-110 opacity-60 group-hover:opacity-100 transition-all duration-700 animate-[spin_3s_linear_infinite]",
+                                    style: {
+                                        background: `conic-gradient(from 0deg, transparent 60%, var(--product-color))`,
+                                        filter: 'url(#electricity) blur(1px)'
+                                    }
+                                }, void 0, false, {
+                                    fileName: "[project]/components/ProductDetailsScroller.tsx",
+                                    lineNumber: 174,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "absolute inset-[-50%] group-hover:scale-110 opacity-30 group-hover:opacity-80 transition-all duration-700 animate-[spin_5s_linear_infinite_reverse]",
+                                    style: {
+                                        background: `conic-gradient(from 180deg, transparent 60%, var(--product-color))`,
+                                        filter: 'url(#electricity) blur(2px)'
+                                    }
+                                }, void 0, false, {
+                                    fileName: "[project]/components/ProductDetailsScroller.tsx",
+                                    lineNumber: 176,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "relative z-10 bg-black/80 group-hover:bg-black/40 backdrop-blur-3xl p-8 md:p-12 rounded-[calc(2rem-2px)] w-full h-full transition-colors overflow-hidden",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none rounded-[2rem]",
+                                            style: {
+                                                background: `radial-gradient(circle at bottom right, ${product.color}30, transparent 60%)`
+                                            }
+                                        }, void 0, false, {
+                                            fileName: "[project]/components/ProductDetailsScroller.tsx",
+                                            lineNumber: 180,
+                                            columnNumber: 17
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
+                                            className: "text-4xl md:text-5xl font-bold font-sans tracking-tight mb-6 text-white relative z-10",
+                                            children: [
+                                                "Why It's ",
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                    style: {
+                                                        color: product.color
+                                                    },
+                                                    className: "drop-shadow-lg",
+                                                    children: "Different"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/components/ProductDetailsScroller.tsx",
+                                                    lineNumber: 183,
+                                                    columnNumber: 28
+                                                }, this)
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/components/ProductDetailsScroller.tsx",
+                                            lineNumber: 182,
+                                            columnNumber: 17
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                            className: "text-gray-300 text-base md:text-lg leading-relaxed mb-8 font-light relative z-10",
+                                            children: "Unlike generic sealants, our non-toxic, eco-friendly gel does not degrade or cause rim corrosion over time. It cleans easily with water and extends the lifespan of your tyres indefinitely."
+                                        }, void 0, false, {
+                                            fileName: "[project]/components/ProductDetailsScroller.tsx",
+                                            lineNumber: 185,
+                                            columnNumber: 17
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                            className: "flex flex-col gap-5 bg-white/5 group-hover:bg-white/10 p-6 rounded-2xl border border-white/5 transition-colors relative z-10",
+                                            children: [
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    className: "flex items-center justify-between",
+                                                    children: [
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                            className: "text-gray-400 uppercase tracking-widest text-xs font-bold group-hover:text-white transition-colors",
+                                                            children: "Volume Delivered"
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/components/ProductDetailsScroller.tsx",
+                                                            lineNumber: 191,
+                                                            columnNumber: 23
+                                                        }, this),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                            className: "font-bold text-lg py-1 px-4 rounded-full shadow-xl transition-transform group-hover:scale-110",
+                                                            style: {
+                                                                backgroundColor: product.color,
+                                                                color: '#000',
+                                                                boxShadow: `0 5px 20px ${product.color}50`
+                                                            },
+                                                            children: product.volume
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/components/ProductDetailsScroller.tsx",
+                                                            lineNumber: 192,
+                                                            columnNumber: 23
+                                                        }, this)
+                                                    ]
+                                                }, void 0, true, {
+                                                    fileName: "[project]/components/ProductDetailsScroller.tsx",
+                                                    lineNumber: 190,
+                                                    columnNumber: 19
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    className: "w-full h-[1px] bg-white/10 group-hover:bg-white/30 transition-colors"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/components/ProductDetailsScroller.tsx",
+                                                    lineNumber: 196,
+                                                    columnNumber: 19
+                                                }, this),
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                    className: "flex items-center justify-between",
+                                                    children: [
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                            className: "text-gray-400 uppercase tracking-widest text-xs font-bold group-hover:text-white transition-colors",
+                                                            children: "Category Class"
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/components/ProductDetailsScroller.tsx",
+                                                            lineNumber: 198,
+                                                            columnNumber: 23
+                                                        }, this),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                            className: "text-white font-bold opacity-90 text-sm",
+                                                            children: product.tagline
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/components/ProductDetailsScroller.tsx",
+                                                            lineNumber: 199,
+                                                            columnNumber: 23
+                                                        }, this)
+                                                    ]
+                                                }, void 0, true, {
+                                                    fileName: "[project]/components/ProductDetailsScroller.tsx",
+                                                    lineNumber: 197,
+                                                    columnNumber: 19
+                                                }, this)
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "[project]/components/ProductDetailsScroller.tsx",
+                                            lineNumber: 189,
+                                            columnNumber: 17
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/components/ProductDetailsScroller.tsx",
+                                    lineNumber: 179,
+                                    columnNumber: 13
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/components/ProductDetailsScroller.tsx",
+                            lineNumber: 169,
+                            columnNumber: 12
+                        }, this)
+                    }, void 0, false, {
+                        fileName: "[project]/components/ProductDetailsScroller.tsx",
+                        lineNumber: 165,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
+                        className: "relative z-10 w-[80vw] md:w-[35vw] h-[60vh] md:h-[70vh] flex items-center justify-center transform-style-3d pointer-events-none",
+                        style: {
+                            scale: bottleScale,
+                            x: bottleX,
+                            y: bottleY,
+                            rotateY: bottleRotateY,
+                            rotateZ: bottleRotateZ
+                        },
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$framer$2d$motion$2f$dist$2f$es$2f$render$2f$components$2f$motion$2f$proxy$2e$mjs__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["motion"].div, {
+                            className: "w-full h-full relative",
+                            animate: {
+                                y: [
+                                    0,
+                                    -20,
+                                    0
+                                ]
+                            },
+                            transition: {
+                                repeat: Infinity,
+                                duration: 5,
+                                ease: "easeInOut"
+                            },
+                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
+                                src: product.image,
+                                alt: product.name,
+                                className: "w-full h-full object-contain",
+                                style: {
+                                    filter: `drop-shadow(0 20px 30px ${product.color}40) drop-shadow(0 0 10px rgba(0,0,0,0.5))`
+                                }
+                            }, void 0, false, {
+                                fileName: "[project]/components/ProductDetailsScroller.tsx",
+                                lineNumber: 223,
+                                columnNumber: 15
+                            }, this)
+                        }, void 0, false, {
+                            fileName: "[project]/components/ProductDetailsScroller.tsx",
+                            lineNumber: 218,
+                            columnNumber: 13
+                        }, this)
+                    }, void 0, false, {
+                        fileName: "[project]/components/ProductDetailsScroller.tsx",
+                        lineNumber: 208,
+                        columnNumber: 9
                     }, this)
-                }, void 0, false, {
-                    fileName: "[project]/components/ProductDetailsScroller.tsx",
-                    lineNumber: 174,
-                    columnNumber: 9
-                }, this)
-            ]
-        }, void 0, true, {
-            fileName: "[project]/components/ProductDetailsScroller.tsx",
-            lineNumber: 73,
-            columnNumber: 7
-        }, this)
-    }, void 0, false, {
+                ]
+            }, void 0, true, {
+                fileName: "[project]/components/ProductDetailsScroller.tsx",
+                lineNumber: 83,
+                columnNumber: 7
+            }, this)
+        ]
+    }, void 0, true, {
         fileName: "[project]/components/ProductDetailsScroller.tsx",
         lineNumber: 72,
         columnNumber: 5
@@ -1628,7 +1768,9 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ProductDetails
 var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ProductVideo$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/components/ProductVideo.tsx [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$FeatureGrid$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/components/FeatureGrid.tsx [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ContactForm$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/components/ContactForm.tsx [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$data$2f$products$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/data/products.ts [app-ssr] (ecmascript)");
 'use client';
+;
 ;
 ;
 ;
@@ -1638,52 +1780,57 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ContactForm$2e
 ;
 function Home() {
     const [selectedProduct, setSelectedProduct] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(0);
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
+        document.documentElement.style.setProperty('--product-color', __TURBOPACK__imported__module__$5b$project$5d2f$data$2f$products$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["products"][selectedProduct].color);
+    }, [
+        selectedProduct
+    ]);
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
-        className: "w-full bg-[#030303] min-h-screen selection:bg-[#39FF14]/30",
+        className: "w-full bg-[#030303] min-h-screen selection:bg-[var(--product-color)]/30",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$3DCarousel$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
                 selected: selectedProduct,
                 setSelected: setSelectedProduct
             }, void 0, false, {
                 fileName: "[project]/app/page.tsx",
-                lineNumber: 15,
+                lineNumber: 20,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ProductDetailsScroller$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
                 selected: selectedProduct
             }, void 0, false, {
                 fileName: "[project]/app/page.tsx",
-                lineNumber: 17,
+                lineNumber: 22,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ProductVideo$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
                 selected: selectedProduct
             }, void 0, false, {
                 fileName: "[project]/app/page.tsx",
-                lineNumber: 19,
+                lineNumber: 24,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$FeatureGrid$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                 fileName: "[project]/app/page.tsx",
-                lineNumber: 21,
+                lineNumber: 26,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 id: "contact",
                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ContactForm$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
                     fileName: "[project]/app/page.tsx",
-                    lineNumber: 24,
+                    lineNumber: 29,
                     columnNumber: 17
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/app/page.tsx",
-                lineNumber: 23,
+                lineNumber: 28,
                 columnNumber: 13
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/app/page.tsx",
-        lineNumber: 14,
+        lineNumber: 19,
         columnNumber: 9
     }, this);
 }
