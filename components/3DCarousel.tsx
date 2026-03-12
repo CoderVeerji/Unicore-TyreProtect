@@ -70,14 +70,16 @@ export default function CarouselHero({
                     {/* Floating product image without any box background */}
                     <div className="w-full h-full relative group flex items-center justify-center">
                         <motion.div 
-                           animate={isCenter ? { y: [0, -15, 0] } : { y: 0 }}
+                           animate={isCenter ? { y: [0, -10, 0] } : { y: 0 }}
                            transition={isCenter ? { repeat: Infinity, duration: 4, ease: "easeInOut" } : {}}
-                           className="absolute inset-0 transition-all duration-300 flex items-center justify-center p-2"
-                           style={{ filter: isCenter ? `drop-shadow(0 20px 30px ${prod.color}60) drop-shadow(0 0 60px ${prod.color}40)` : 'none' }}>
+                           className="absolute inset-0 transition-all duration-300 flex items-center justify-center p-2 will-change-transform"
+                           style={{ filter: isCenter ? `drop-shadow(0 15px 25px ${prod.color}50)` : 'none' }}>
                             <img 
                                src={prod.image}
                                alt={prod.name}
-                               className="object-contain w-full h-full drop-shadow-2xl" 
+                               loading="eager"
+                               decoding="async"
+                               className="object-contain w-full h-full" 
                                onError={(e) => {
                                  // Fallback if image not found
                                  (e.target as HTMLImageElement).src = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="200" viewBox="0 0 100 200"><rect fill="%23333" width="100" height="200"/><text fill="white" x="50" y="100" font-family="Arial" font-size="14" text-anchor="middle">Missing Image</text></svg>';

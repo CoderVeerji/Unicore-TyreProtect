@@ -83,10 +83,11 @@ export default function ProductDetailsScroller({ selected }: { selected: number 
       <div className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden perspective-[1000px] px-6">
         
         {/* Dynamic Glowing Background (Optimized) */}
+        {/* Dynamic Glowing Background (Optimized) */}
         <motion.div 
-           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[100vw] md:w-[50vw] h-[100vw] md:h-[50vw] rounded-full opacity-20 pointer-events-none"
-           style={{ backgroundColor: product.color, filter: 'blur(80px)' }}
-           animate={{ scale: [1, 1.2, 1], opacity: [0.1, 0.2, 0.1] }}
+           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[100vw] md:w-[50vw] h-[100vw] md:h-[50vw] rounded-full opacity-20 pointer-events-none will-change-transform"
+           style={{ backgroundColor: product.color, filter: isMobile ? 'blur(40px)' : 'blur(80px)' }}
+           animate={{ scale: isMobile ? 1 : [1, 1.2, 1], opacity: isMobile ? 0.15 : [0.1, 0.2, 0.1] }}
            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
         />
 
@@ -96,14 +97,18 @@ export default function ProductDetailsScroller({ selected }: { selected: number 
           style={{ opacity: t1O, y: t1Y, scale: t1Scale }}
         >
           <motion.div 
-             whileHover={{ scale: 1.02, rotateY: -3, rotateX: 3 }}
-             className="group relative rounded-[2rem] p-[2px] shadow-[0_20px_50px_rgba(0,0,0,0.8)] inline-block w-full max-w-[500px] mx-auto lg:ml-auto block transition-colors cursor-none overflow-hidden"
+             whileHover={isMobile ? {} : { scale: 1.02, rotateY: -3, rotateX: 3 }}
+             className="group relative rounded-[2rem] p-[2px] shadow-[0_10px_30px_rgba(0,0,0,0.8)] md:shadow-[0_20px_50px_rgba(0,0,0,0.8)] inline-block w-full max-w-[500px] mx-auto lg:ml-auto block transition-colors cursor-none overflow-hidden will-change-transform"
           >
-            {/* ELECTRIC ANIMATED BORDERS */}
-            <div className="absolute inset-[-50%] group-hover:scale-110 opacity-60 group-hover:opacity-100 transition-all duration-700 animate-[spin_3s_linear_infinite]" 
-                 style={{ background: `conic-gradient(from 0deg, transparent 60%, var(--product-color))`, filter: 'url(#electricity) blur(1px)' }} />
-            <div className="absolute inset-[-50%] group-hover:scale-110 opacity-30 group-hover:opacity-80 transition-all duration-700 animate-[spin_5s_linear_infinite_reverse]" 
-                 style={{ background: `conic-gradient(from 180deg, transparent 60%, var(--product-color))`, filter: 'url(#electricity) blur(2px)' }} />
+            {/* ELECTRIC ANIMATED BORDERS (Disabled on mobile for performance) */}
+            {!isMobile && (
+              <>
+                <div className="absolute inset-[-50%] group-hover:scale-110 opacity-60 group-hover:opacity-100 transition-all duration-700 animate-[spin_3s_linear_infinite]" 
+                     style={{ background: `conic-gradient(from 0deg, transparent 60%, var(--product-color))`, filter: 'url(#electricity) blur(1px)' }} />
+                <div className="absolute inset-[-50%] group-hover:scale-110 opacity-30 group-hover:opacity-80 transition-all duration-700 animate-[spin_5s_linear_infinite_reverse]" 
+                     style={{ background: `conic-gradient(from 180deg, transparent 60%, var(--product-color))`, filter: 'url(#electricity) blur(2px)' }} />
+              </>
+            )}
 
             <div className="relative z-10 bg-black/80 group-hover:bg-black/40 backdrop-blur-3xl p-8 md:p-12 rounded-[calc(2rem-2px)] w-full h-full transition-colors overflow-hidden">
                 {/* Animated hover gradient border effect */}
@@ -133,14 +138,18 @@ export default function ProductDetailsScroller({ selected }: { selected: number 
           style={{ opacity: t2O, y: t2Y, scale: t2Scale }}
         >
           <motion.div 
-             whileHover={{ scale: 1.02, rotateY: 3, rotateX: 3 }}
-             className="group relative rounded-[2rem] p-[2px] shadow-[0_20px_50px_rgba(0,0,0,0.8)] inline-block w-full max-w-[500px] mx-auto block lg:mr-auto block transition-colors cursor-none overflow-hidden"
+             whileHover={isMobile ? {} : { scale: 1.02, rotateY: 3, rotateX: 3 }}
+             className="group relative rounded-[2rem] p-[2px] shadow-[0_10px_30px_rgba(0,0,0,0.8)] md:shadow-[0_20px_50px_rgba(0,0,0,0.8)] inline-block w-full max-w-[500px] mx-auto block lg:mr-auto block transition-colors cursor-none overflow-hidden will-change-transform"
           >
-            {/* ELECTRIC ANIMATED BORDERS */}
-            <div className="absolute inset-[-50%] group-hover:scale-110 opacity-60 group-hover:opacity-100 transition-all duration-700 animate-[spin_3s_linear_infinite]" 
-                 style={{ background: `conic-gradient(from 0deg, transparent 60%, var(--product-color))`, filter: 'url(#electricity) blur(1px)' }} />
-            <div className="absolute inset-[-50%] group-hover:scale-110 opacity-30 group-hover:opacity-80 transition-all duration-700 animate-[spin_5s_linear_infinite_reverse]" 
-                 style={{ background: `conic-gradient(from 180deg, transparent 60%, var(--product-color))`, filter: 'url(#electricity) blur(2px)' }} />
+            {/* ELECTRIC ANIMATED BORDERS (Disabled on mobile for performance) */}
+            {!isMobile && (
+              <>
+                <div className="absolute inset-[-50%] group-hover:scale-110 opacity-60 group-hover:opacity-100 transition-all duration-700 animate-[spin_3s_linear_infinite]" 
+                     style={{ background: `conic-gradient(from 0deg, transparent 60%, var(--product-color))`, filter: 'url(#electricity) blur(1px)' }} />
+                <div className="absolute inset-[-50%] group-hover:scale-110 opacity-30 group-hover:opacity-80 transition-all duration-700 animate-[spin_5s_linear_infinite_reverse]" 
+                     style={{ background: `conic-gradient(from 180deg, transparent 60%, var(--product-color))`, filter: 'url(#electricity) blur(2px)' }} />
+              </>
+            )}
 
             <div className="relative z-10 bg-black/80 group-hover:bg-black/40 backdrop-blur-3xl p-8 md:p-12 rounded-[calc(2rem-2px)] w-full h-full transition-colors overflow-hidden">
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none rounded-[2rem]" style={{ background: `radial-gradient(circle at top left, ${product.color}30, transparent 60%)` }} />
@@ -167,14 +176,18 @@ export default function ProductDetailsScroller({ selected }: { selected: number 
           style={{ opacity: t3O, y: t3Y, scale: t3Scale }}
         >
            <motion.div 
-              whileHover={{ scale: 1.02, rotateY: -3, rotateX: 3 }}
-              className="group relative rounded-[2rem] p-[2px] shadow-[0_20px_50px_rgba(0,0,0,0.8)] inline-block w-full max-w-[500px] mx-auto block lg:ml-auto block transition-colors cursor-none overflow-hidden"
+              whileHover={isMobile ? {} : { scale: 1.02, rotateY: -3, rotateX: 3 }}
+              className="group relative rounded-[2rem] p-[2px] shadow-[0_10px_30px_rgba(0,0,0,0.8)] md:shadow-[0_20px_50px_rgba(0,0,0,0.8)] inline-block w-full max-w-[500px] mx-auto block lg:ml-auto block transition-colors cursor-none overflow-hidden will-change-transform"
            >
-            {/* ELECTRIC ANIMATED BORDERS */}
-            <div className="absolute inset-[-50%] group-hover:scale-110 opacity-60 group-hover:opacity-100 transition-all duration-700 animate-[spin_3s_linear_infinite]" 
-                 style={{ background: `conic-gradient(from 0deg, transparent 60%, var(--product-color))`, filter: 'url(#electricity) blur(1px)' }} />
-            <div className="absolute inset-[-50%] group-hover:scale-110 opacity-30 group-hover:opacity-80 transition-all duration-700 animate-[spin_5s_linear_infinite_reverse]" 
-                 style={{ background: `conic-gradient(from 180deg, transparent 60%, var(--product-color))`, filter: 'url(#electricity) blur(2px)' }} />
+            {/* ELECTRIC ANIMATED BORDERS (Disabled on mobile for performance) */}
+            {!isMobile && (
+              <>
+                <div className="absolute inset-[-50%] group-hover:scale-110 opacity-60 group-hover:opacity-100 transition-all duration-700 animate-[spin_3s_linear_infinite]" 
+                     style={{ background: `conic-gradient(from 0deg, transparent 60%, var(--product-color))`, filter: 'url(#electricity) blur(1px)' }} />
+                <div className="absolute inset-[-50%] group-hover:scale-110 opacity-30 group-hover:opacity-80 transition-all duration-700 animate-[spin_5s_linear_infinite_reverse]" 
+                     style={{ background: `conic-gradient(from 180deg, transparent 60%, var(--product-color))`, filter: 'url(#electricity) blur(2px)' }} />
+              </>
+            )}
 
             <div className="relative z-10 bg-black/80 group-hover:bg-black/40 backdrop-blur-3xl p-8 md:p-12 rounded-[calc(2rem-2px)] w-full h-full transition-colors overflow-hidden">
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none rounded-[2rem]" style={{ background: `radial-gradient(circle at bottom right, ${product.color}30, transparent 60%)` }} />
@@ -206,7 +219,7 @@ export default function ProductDetailsScroller({ selected }: { selected: number 
 
         {/* Floating Bottle (Stays behind the text nicely. Moving and spinning safely vertically) */}
         <motion.div 
-          className="relative z-10 w-[80vw] md:w-[35vw] h-[60vh] md:h-[70vh] flex items-center justify-center transform-style-3d pointer-events-none"
+          className="relative z-10 w-[80vw] md:w-[35vw] h-[60vh] md:h-[70vh] flex items-center justify-center transform-style-3d pointer-events-none will-change-transform"
           style={{ 
             scale: bottleScale, 
             x: bottleX, 
@@ -217,14 +230,16 @@ export default function ProductDetailsScroller({ selected }: { selected: number 
         >
             <motion.div 
               className="w-full h-full relative"
-              animate={{ y: [0, -20, 0] }}
+              animate={isMobile ? {} : { y: [0, -20, 0] }}
               transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
             >
               <img 
                 src={product.image} 
                 alt={product.name}
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-contain"
-                style={{ filter: `drop-shadow(0 20px 30px ${product.color}40) drop-shadow(0 0 10px rgba(0,0,0,0.5))` }}
+                style={{ filter: isMobile ? `drop-shadow(0 10px 15px rgba(0,0,0,0.8))` : `drop-shadow(0 20px 30px ${product.color}40) drop-shadow(0 0 10px rgba(0,0,0,0.5))` }}
               />
           </motion.div>
         </motion.div>
